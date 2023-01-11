@@ -1,0 +1,81 @@
+{
+	"name": "@gauzy/server",
+	"version": "0.1.0",
+	"description": "Gauzy Server",
+	"license": "AGPL-3.0",
+	"homepage": "https://gauzy.co",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ever-co/ever-gauzy.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ever-co/ever-gauzy/issues"
+	},
+	"private": true,
+	"author": {
+		"name": "Ever Co. LTD",
+		"email": "ever@ever.co",
+		"url": "https://ever.co"
+	},
+	"scripts": {},
+	"devDependencies": {
+		"@electron/rebuild": "^3.2.10",
+		"electron": "20.2.0",
+		"electron-builder": "^23.6.0",
+		"electron-installer-dmg": "^4.0.0",
+		"electron-packager": "^17.1.1",
+		"electron-reload": "~1.5.0",
+		"node-polyfill-webpack-plugin": "^1.1.4",
+		"terser-webpack-plugin": "^5.2.5"
+	},
+	"dependencies": {
+		"@angular/cdk": "13.2.2",
+		"@angular/material": "13.2.2",
+		"@electron/remote": "^2.0.8",
+		"@gauzy/desktop-ui-lib": "^0.1.0",
+		"@grpc/grpc-js": "^1.6.7",
+		"@nebular/auth": "^9.0.3",
+		"@nebular/bootstrap": "^9.0.3",
+		"@nebular/eva-icons": "^9.0.3",
+		"@nebular/security": "^9.0.3",
+		"@nebular/theme": "^9.0.3",
+		"@nestjs/typeorm": "^9.0.1",
+		"@ng-select/ng-select": "^8.1.1",
+		"@ngneat/until-destroy": "^9.2.0",
+		"@ngx-translate/core": "^14.0.0",
+		"@ngx-translate/http-loader": "^7.0.0",
+		"@sentry/electron": "^4.1.2",
+		"@sentry/node": "^7.28.1",
+		"@sentry/tracing": "^7.28.1",
+		"@sentry/types": "^7.28.1",
+		"app-root-path": "^3.0.0",
+		"auto-launch": "5.0.5",
+		"consolidate": "^0.16.0",
+		"electron-log": "^4.4.8",
+		"electron-notarize": "^1.2.2",
+		"electron-store": "^8.1.0",
+		"electron-updater": "^5.3.0",
+		"electron-util": "^0.17.2",
+		"ffi-napi": "^4.0.3",
+		"form-data": "^3.0.0",
+		"iconv": "^3.0.1",
+		"knex": "^2.4.0",
+		"moment": "^2.29.4",
+		"ngx-electron": "^2.2.0",
+		"node-static": "^0.7.11",
+		"pg": "^8.8.0",
+		"pg-query-stream": "^4.2.4",
+		"rxjs": "^7.4.0",
+		"sqlite3": "^5.1.2",
+		"squirrelly": "^8.0.8",
+		"twing": "^5.0.2",
+		"typeorm": "0.3.7",
+		"typeorm-aurora-data-api-driver": "^2.4.4",
+		"typeorm-express-query-builder": "https://github.com/ever-co/typeorm-express-query-builder.git"
+	},
+	"optionalDependencies": {
+		"node-linux": "^0.1.12",
+		"node-mac": "^1.0.1",
+		"node-windows": "^1.0.0-beta.8"
+	}
+}

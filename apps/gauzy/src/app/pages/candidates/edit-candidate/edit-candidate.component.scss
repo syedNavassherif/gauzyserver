@@ -1,0 +1,112 @@
+@import 'themes';
+
+:host .notification {
+  margin-top: 18px;
+  @include nb-ltr(margin-left, 20px);
+  @include nb-rtl(margin-right, 20px);
+  @include nb-ltr(margin-right, -20px);
+  @include nb-rtl(margin-left, -20px);
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgb(0, 145, 255);
+}
+
+.notification:hover {
+  cursor: pointer;
+}
+
+:host .exist {
+  position: absolute;
+  font-size: 8px;
+  top: 9px;
+  @include nb-ltr(right, 8px);
+  @include nb-rtl(left, 8px);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #f10;
+}
+
+:host .bell {
+  color: white !important;
+  font-size: 18px;
+  position: absolute;
+  margin-top: 9px;
+  @include nb-ltr(margin-left, 9px);
+  @include nb-rtl(margin-right, 9px);
+}
+
+:host .edit-icon {
+  @include nb-ltr(margin-left, 30px);
+  @include nb-rtl(margin-right, 30px);
+  position: relative;
+  width: 36px;
+
+  svg {
+    position: absolute;
+  }
+
+  nb-icon {
+    position: absolute;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 1rem;
+}
+
+.org-details {
+  .edit-public-page {
+    cursor: pointer;
+    color: #027ad6;
+    padding-top: 3px;
+  }
+}
+
+.setting-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.body-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.mutation-card.setting-block {
+  background: #eaf3fc;
+}
+
+.transparent {
+  opacity: 0.7;
+}
+
+.settings-body {
+  padding: 35px;
+}
+
+.sub-header {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+:host .header-content {
+  display: flex;
+  .header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 560px;
+    @include nb-ltr(padding-left, 30px);
+    @include nb-rtl(padding-right, 30px);
+  }
+}

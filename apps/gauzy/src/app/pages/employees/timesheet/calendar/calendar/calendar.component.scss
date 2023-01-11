@@ -1,0 +1,24 @@
+@import '../../../../payments/payments.component.scss';
+
+:host nb-card {
+  background-color: var(--gauzy-card-2);
+  ngx-gauzy-filters {
+    margin: 0 -2rem;
+  }
+  nb-card-body {
+    height: calc(100vh - 21.75rem);
+  }
+
+  .custom-calendar {
+    height: 100%;
+    overflow: auto;
+  }
+}
+.add-button {
+  position: absolute;
+  right: 1rem;
+  top: -0.75rem;
+  background-color: var(--gauzy-card-2);
+  padding: 6px 8px;
+  border-radius: nb-theme(button-rectangle-border-radius);
+}

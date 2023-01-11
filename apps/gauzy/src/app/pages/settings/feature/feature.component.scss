@@ -1,0 +1,16 @@
+@import '../../employees/activity/layout/layout.component.scss';
+
+.tabset{
+    padding: 0;
+}
+
+h4 {
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 30px;
+	letter-spacing: 0em;
+
+	.menu-setting {
+		font-weight: 400;
+	}
+}

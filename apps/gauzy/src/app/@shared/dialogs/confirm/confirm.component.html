@@ -1,0 +1,19 @@
+<nb-card class="confirm-dialog">
+	<nb-card-header class="d-flex flex-column">
+		<span class="cancel"><i (click)="close(false)" class="fas fa-times"></i></span>
+		<div class="title">
+			{{ data?.title ? data?.title : ('DIALOG.CONFIRM' | translate) }}
+		</div>
+	</nb-card-header>
+	<nb-card-body class="custom-scroll">
+		{{ data?.message }}
+	</nb-card-body>
+	<nb-card-footer>
+		<button (click)="close(false)" class="mr-2" nbButton outline status="basic">
+			{{ data?.noText || ('BUTTONS.NO' | translate) }}
+		</button>
+		<button class="mr-2" nbButton status="primary" (click)="close(true)">
+			{{ data?.yesText || ('BUTTONS.YES' | translate) }}
+		</button>
+	</nb-card-footer>
+</nb-card>

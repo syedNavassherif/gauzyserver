@@ -1,0 +1,24 @@
+@import 'report';
+@import 'gauzy/_gauzy-overrides';
+
+:host {
+  .filters {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  ::ng-deep {
+    ng-select {
+      min-width: 10rem;
+    }
+    @include ng-select-overrides(
+      2rem,
+      $default-button-radius,
+      $default-box-shadow
+    );
+  }
+}
+
+.report-body{
+	height: calc(100% - 8rem) !important;
+}

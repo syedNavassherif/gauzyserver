@@ -1,0 +1,33 @@
+.badge-disabled {
+  background-color: #ccc;
+}
+
+.badge {
+  text-align: center;
+  padding: 4px 8px;
+}
+
+div {
+  /* Status */
+
+  /* Auto layout */
+
+  border-radius: 0.25rem;
+  align-content: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: fit-content;
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 4px 0px;
+  /* Typography */
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+}

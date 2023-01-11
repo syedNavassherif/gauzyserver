@@ -1,0 +1,58 @@
+@import 'gauzy/_gauzy-table';
+@import 'gauzy/_gauzy-dialogs';
+
+.education-form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.notes {
+  max-width: 41.6666666667% !important;
+  margin: 0.5rem 1.5rem;
+}
+input {
+  width: 90%;
+  margin: 0.5rem 1.5rem;
+}
+.form-btn {
+  margin: 0.5rem 0;
+}
+.education-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.education-line {
+  margin: 0.2rem 0;
+}
+.education-title {
+  font-weight: 600;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .btn {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px;
+  }
+}
+
+form {
+  background-color: var(--gauzy-card-2);
+  border-radius: nb-theme(border-radius);
+  padding: 1rem;
+}
+
+:host {
+  @include dialog(transparent, var(--gauzy-card-1));
+  .table-scroll-container{
+    @include input-appearance(2rem, var(--gauzy-sidebar-background-4));
+  }
+}

@@ -1,0 +1,16 @@
+@import 'gauzy/_gauzy-dialogs';
+
+.main {
+  width: 645px;
+  max-width: 645px;
+}
+
+nb-radio-group {
+  display: flex;
+}
+
+:host {
+  nb-card {
+    background-color: var(--gauzy-card-1);
+  }
+}

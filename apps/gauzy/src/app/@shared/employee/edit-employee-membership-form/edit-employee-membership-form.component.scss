@@ -1,0 +1,26 @@
+@import 'gauzy/_gauzy-dialogs';
+
+.employee-form {
+  width: 100%;
+}
+
+.card {
+  height: 100%;
+  background-color: var(--gauzy-card-2);
+  border: unset;
+}
+
+.container {
+  padding: 1rem;
+  border-radius: nb-theme(border-radius);
+  background-color: nb-theme(card-background-color);
+}
+
+.entities {
+  margin-bottom: 0.5rem;
+}
+
+:host{
+  height: 100%;
+  @include dialog(var(--gauzy-card-2), var(--gauzy-card-1));
+}

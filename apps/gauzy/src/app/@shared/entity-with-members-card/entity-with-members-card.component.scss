@@ -1,0 +1,61 @@
+@import 'themes';
+
+:host .card-body {
+  margin: 10px;
+
+  .header-container {
+    text-align: center;
+    position: relative;
+
+    .members-count {
+      font-size: 0.7em;
+      color: darkgray;
+    }
+  }
+
+  .team-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .name-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+
+      .image-container {
+        width: 70px;
+        height: 50px;
+        display: flex;
+
+        img {
+          height: 100%;
+          max-width: 70px;
+        }
+      }
+    }
+
+    .button-container {
+      display: flex;
+      width: 160px;
+      justify-content: space-between;
+      margin-top: 15px;
+      @include nb-ltr(margin-left, 9px);
+      @include nb-rtl(margin-right, 9px);
+    }
+  }
+}
+
+.color {
+  position: static;
+  margin-top: 5px;
+  @include nb-ltr(margin-right, 5px);
+  @include nb-rtl(margin-left, 5px);
+  display: inline-block;
+}
+
+.tags {
+  display: flex;
+  width: 200px;
+  flex-wrap: wrap;
+}

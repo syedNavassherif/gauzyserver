@@ -1,0 +1,73 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# dependencies
+node_modules/
+
+# sqlite3 database
+*.sqlite3
+*.sqlite3-journal
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.angular/cache
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+lerna-debug.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+
+.env
+
+# Typeorm Logs
+ormlogs.log
+ 
+# Cache File
+/.cache
+/apps/**/.cache
+/packages/**/.cache
+/packages/**/dist
+
+/.deploy/nginx/log
+/apps/gauzy/src/environments/environment.prod.ts
+/apps/gauzy/src/environments/environment.ts
+
+/apps/desktop-timer/src/environments/environment.prod.ts
+/apps/desktop-timer/src/environments/environment.ts
+
+/apps/desktop/src/environments/environment.prod.ts
+/apps/desktop/src/environments/environment.ts
+
+/apps/server/src/environments/environment.prod.ts
+/apps/server/src/environments/environment.ts
+
+/export
+/import
+/apps/api/*.tsbuildinfo

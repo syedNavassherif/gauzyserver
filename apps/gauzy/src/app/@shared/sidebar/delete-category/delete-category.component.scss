@@ -1,0 +1,26 @@
+@import 'gauzy/_gauzy-dialogs';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  min-width: 500px;
+  background-color: var(--gauzy-card-1);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-buttons {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.save-button {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}

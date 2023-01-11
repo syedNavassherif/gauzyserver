@@ -1,0 +1,31 @@
+<ng-template [ngIf]="rowData?.isDeleted" [ngIfElse]="statusTemplate">
+	<div>
+		<div class="badge badge-danger">
+			{{ 'EMPLOYEES_PAGE.DELETED' | translate }}
+		</div>
+	</div>
+</ng-template>
+<ng-template #statusTemplate>
+	<ng-template [ngIf]="rowData?.isActive">
+		<div>
+			<div class="badge badge-success">
+				{{ 'EMPLOYEES_PAGE.ACTIVE' | translate }}
+			</div>
+		</div>
+	</ng-template>
+	<ng-template [ngIf]="!rowData.startedWorkOn">
+		<div [nbTooltip]="'EMPLOYEES_PAGE.NOT_STARTED_HELP' | translate">
+			<div class="badge badge-disabled">
+				{{ 'EMPLOYEES_PAGE.NOT_STARTED' | translate }}
+			</div>
+		</div>
+	</ng-template>
+	<ng-template [ngIf]="rowData.workStatus">
+		<div class="text-center d-block">
+			<div class="badge badge-danger">
+				{{ 'EMPLOYEES_PAGE.WORK_ENDED' | translate }}
+			</div>
+			{{ rowData.workStatus }}
+		</div>
+	</ng-template>
+</ng-template>

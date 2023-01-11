@@ -1,0 +1,23 @@
+@import 'themes';
+
+.email-wrap {
+  max-width: 45rem;
+}
+
+.info-block {
+  border-top: 1px #d1d1d1 solid;
+  border-left: 1px #d1d1d1 solid;
+  border-right: 1px #d1d1d1 solid;
+}
+
+:host .email {
+  border: 1px #d1d1d1 solid;
+  @include nb-ltr(margin-left, 15px);
+  @include nb-rtl(margin-right, 15px);
+  border-radius: 5px;
+}
+
+:host .editor {
+  @include nb-ltr(padding, 0 2px 0 0);
+  @include nb-rtl(padding, 0 0px 0 2px);
+}

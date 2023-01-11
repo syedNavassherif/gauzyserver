@@ -1,0 +1,31 @@
+<nb-card class="main">
+	<nb-card-header class="header">
+		<span class="cancel"
+			><i class="fas fa-times" (click)="closeDialog()"></i
+		></span>
+		<h5 class="title">{{ 'HELP_PAGE.REMOVE_ARTICLE' | translate }}</h5>
+	</nb-card-header>
+	<nb-card-body>
+		<span class="label">{{ 'HELP_PAGE.ARE_YOU_SURE' | translate }}</span>
+	</nb-card-body>
+	<nb-card-footer class="save-button">
+		<button
+			status="basic"
+			outline
+			size="small"
+			(click)="closeDialog()"
+			nbButton
+		>
+			{{ 'BUTTONS.CANCEL' | translate }}
+		</button>
+		<button
+			status="danger"
+			size="small"
+			class="mr-3 ml-3"
+			(click)="delete()"
+			nbButton
+		>
+			{{ 'BUTTONS.DELETE' | translate }}
+		</button>
+	</nb-card-footer>
+</nb-card>

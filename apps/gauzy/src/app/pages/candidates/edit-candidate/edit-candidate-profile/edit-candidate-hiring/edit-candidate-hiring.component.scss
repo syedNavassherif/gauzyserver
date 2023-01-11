@@ -1,0 +1,7 @@
+:host {
+  overflow-y: auto;
+  max-height: calc(100vh - 28rem);
+  nb-card {
+    background-color: var(--gauzy-card-2);
+  }
+}

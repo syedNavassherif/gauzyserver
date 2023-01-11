@@ -1,0 +1,115 @@
+@import 'gauzy/_gauzy-overrides';
+@import 'var';
+
+.form-group input {
+  width: 100%;
+}
+
+.notification {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgb(0, 145, 255);
+}
+
+.notification:hover {
+  cursor: pointer;
+}
+
+:host .bell {
+  color: white !important;
+  font-size: 18px;
+  position: absolute;
+  margin-top: 9px;
+  @include nb-ltr(margin-left, 9px);
+  @include nb-rtl(margin-right, 9px);
+}
+
+:host .exist {
+  position: absolute;
+  font-size: 8px;
+  top: 9px;
+  @include nb-ltr(right, 8px);
+  @include nb-rtl(left, 8px);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #f10;
+}
+
+.nb-card {
+  background-color: var(--gauzy-card-2);
+}
+
+.org-settings {
+  width: 100%;
+}
+
+:host {
+  nb-card {
+    nb-card-body {
+      overflow: unset;
+      height: calc(100vh - 20rem);
+    }
+  }
+
+  ::ng-deep .route-tabset .route-tab a.tab-link {
+    border-radius: nb-theme(border-radius) nb-theme(border-radius) 0 0;
+
+    span.tab-text {
+      text-transform: lowercase;
+      display: block;
+
+      &:first-letter {
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+:host ::ng-deep {
+  nb-route-tabset {
+    ul.route-tabset {
+      padding: 0;
+
+      @include respond(dsk) {
+        flex-wrap: wrap;
+      }
+    }
+
+    .tab-link {
+      padding: px2rem(9px) px2rem(20px);
+
+      @include respond(dsk) {
+        padding: px2rem(10px) px2rem(20px);
+      }
+
+      @include respond(1440px) {
+        padding: px2rem(10px) px2rem(25px);
+      }
+
+      @include respond(xxl) {
+        padding: px2rem(10px) px2rem(20px);
+      }
+
+      nb-icon {
+        display: block;
+        margin: auto;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0em;
+}
+
+:host {
+  @include input-appearance(42px, var(--gauzy-card-1));
+}

@@ -1,0 +1,21 @@
+@import '../email-templates/email-templates.component.scss';
+
+:host {
+  .ace-editor {
+    height: calc($height + 3.5rem) !important;
+  }
+
+  .custom-parent-email-content {
+    height: calc($height + 1.3rem) !important;
+  }
+
+  .custom-preview-template {
+    width: 100%;
+  }
+
+  .custom-preview-template ::ng-deep {
+    * {
+      color: nb-theme(text-basic-color);
+    }
+  }
+}

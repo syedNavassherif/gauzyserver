@@ -1,0 +1,14 @@
+<div (click)="$event.stopPropagation()">
+	<ng-select
+		[addTag]="hasPermissionTaskEdit ? createNew : null"
+		[disabled]="disabled"
+		[clearable]="true"
+		[items]="tasks"
+		[(ngModel)]="taskId"
+		[placeholder]="'TIMER_TRACKER.SELECT_TASK' | translate"
+		bindValue="id"
+		bindLabel="title"
+		appendTo="body"
+	>
+	</ng-select>
+</div>

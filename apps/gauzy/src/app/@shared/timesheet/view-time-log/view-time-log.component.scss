@@ -1,0 +1,43 @@
+@import 'gauzy/_gauzy-table';
+@import 'gauzy/_gauzy-dialogs';
+
+:host {
+  .time-log-view-contiainer {
+    width: 430px;
+    box-shadow: 0px 0px 0px 2px nb-theme(color-primary-transparent-default);
+    border-radius: nb-theme(border-radius);
+  }
+
+  .time-log-text {
+    color: nb-theme(gauzy-text-color-1);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+
+  .time-log-action {
+    background-color: nb-theme(gauzy-card-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: nb-theme(button-rectangle-border-radius);
+    padding: 6px 8px;
+    width: fit-content;
+  }
+
+  nb-list {
+    max-height: 50vh;
+    overflow-x: hidden;
+    overflow-y: auto !important;
+  }
+
+  nb-list-item {
+    cursor: pointer;
+  }
+
+  .cancel {
+    padding: 4px 4px 0;
+  }
+}

@@ -1,0 +1,139 @@
+@import './../../../styles/themes';
+@import 'gauzy/_gauzy-dialogs';
+
+@include nb-install-component() {
+  h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  nb-select, ngx-language-selector {
+    width: 12.5rem;
+  }
+
+  nb-select ::ng-deep {
+    .select-button {
+      text-overflow: inherit;
+      padding-left: 0.5rem !important;
+    }
+  }
+
+  nb-list{
+    overflow-y: overlay;
+  }
+
+  p {
+    color: nb-theme(text-primary-color);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+	padding: 0 1rem;
+  }
+
+  .cancel{
+	  align-self: flex-end;
+	  cursor: pointer;
+  }
+
+  .header{
+	  display: flex;
+	  flex-direction: column;
+	  align-items: flex-start;
+  }
+
+  nb-list-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(50, 50, 50, 0.05);
+    &:last-child{
+      border-bottom: unset;
+    }
+    .theme{
+      width: 100%;
+    }
+  }
+
+  .settings-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+
+    width: 100%;
+    margin: 0 0 1rem;
+
+    a {
+      text-decoration: none;
+      font-size: 2.25rem;
+
+      color: #a4abb3;
+
+      &.selected {
+        color: #40dc7e;
+      }
+
+      @include nb-for-theme(cosmic) {
+        &.selected {
+          color: #3dcc6d;
+        }
+      }
+    }
+  }
+
+  .settings {
+    margin-bottom: 1em;
+  }
+
+  .switcher {
+    margin-bottom: 1rem;
+
+    ::ng-deep ngx-switcher {
+      .switch-label span {
+        font-size: 1em;
+        font-weight: normal;
+      }
+
+      .switch {
+        height: 1.5em;
+        width: 3em;
+
+        .slider::before {
+          height: 1.5em;
+          width: 1.5em;
+        }
+
+        input:checked + .slider::before {
+          @include nb-ltr(transform, translateX(1.5rem) !important);
+          @include nb-rtl(transform, translateX(-1.5rem) !important);
+        }
+      }
+
+      @include nb-for-theme(cosmic) {
+        // .switch .slider {
+        // background-color: nb-theme(color-bg);
+        // }
+      }
+    }
+  }
+
+  .title-uppercase {
+    text-transform: uppercase;
+
+    .settings-row select {
+      max-height: 40px;
+      padding: 0;
+      padding-left: 10px;
+      font-size: 0.9rem;
+    }
+  }
+
+  .language-select {
+    margin-right: 65px;
+  }
+
+  @include input-appearance(2rem, var(--gauzy-sidebar-background-4));
+}

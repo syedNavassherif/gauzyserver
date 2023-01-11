@@ -1,0 +1,46 @@
+@import 'gauzy/_gauzy-dialogs';
+
+.max-width-60vw {
+  width: 645px;
+}
+
+.helper-text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  p {
+    padding-right: 5px;
+  }
+}
+
+:host {
+  nb-card {
+    background: var(--gauzy-card-1);
+  }
+  nb-tab,
+  .content {
+    background-color: var(--gauzy-card-2);
+  }
+  nb-tab {
+    height: 20.75vh;
+  }
+  ::ng-deep {
+    nb-progress-bar {
+      width: 100%;
+      .progress-container {
+        height: 10px !important;
+      }
+      .progress-value {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}
+.info {
+  color: nb-theme(color-info-default);
+}

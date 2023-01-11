@@ -1,0 +1,53 @@
+@import 'gauzy/_gauzy-dialogs';
+
+:host {
+  nb-card {
+    background-color: nb-theme(gauzy-card-1);
+  }
+}
+
+:host .col-sm-3 {
+  @include nb-ltr(padding-left, 0);
+  @include nb-rtl(padding-right, 0);
+}
+
+.status-label {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius);
+
+  h4 {
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+  }
+}
+
+.status-label.requested {
+  background: #ffc94d;
+}
+
+.status-label.approved {
+  background: #03e88c;
+}
+
+.status-label.active {
+  background: #e45959;
+}
+
+nb-radio-group {
+  display: flex;
+}
+
+.text-danger {
+  max-width: 100%;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.main {
+  min-width: 800px;
+}

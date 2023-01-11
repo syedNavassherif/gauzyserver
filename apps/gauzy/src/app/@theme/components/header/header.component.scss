@@ -1,0 +1,262 @@
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+@import '../../styles/themes';
+$orange: #f56d58;
+@include nb-install-component() {
+  width: 100%;
+  .notification-header {
+    background-color: #1b005d;
+    text-align: center;
+    font-weight: 300;
+    margin: 0;
+    padding: 3px;
+    width: 100%;
+    position: relative;
+    color: rgb(236, 236, 236);
+    a {
+      color: rgb(236, 236, 236);
+    }
+    a:hover {
+      color: rgb(226, 226, 226);
+    }
+  }
+
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: transparent;
+    .show-large-down {
+      display: none;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      //width: calc(#{nb-theme(sidebar-width)} - #{nb-theme(header-padding)});
+      max-width: nb-theme(sidebar-width);
+      width: nb-theme(sidebar-width);
+      margin-left: nb-theme(sidebar-width-compact);
+      button.hidden-menu {
+        padding: 0 0.5rem;
+        height: 1.625rem;
+        width: 1.625rem;
+        margin-left: 0.625rem;
+      }
+      ngx-gauzy-logo {
+        width: 100%;
+      }
+      &.compacted {
+        width: nb-theme(sidebar-width-compact);
+        justify-content: space-around;
+        align-items: center;
+        button.hidden-menu {
+          margin-left: 0;
+        }
+        ::ng-deep .accordion.workspace {
+          box-shadow: none;
+          width: 1.75rem;
+          height: auto;
+          .logo {
+            display: none;
+          }
+          nb-accordion-item-header {
+            padding: 0px;
+            nb-icon {
+              border: none;
+              left: 0rem;
+            }
+          }
+        }
+      }
+    }
+
+    nb-action {
+      height: auto;
+      display: flex;
+      align-content: center;
+      margin-right: 0.625rem;
+      @include nb-ltr(margin-right, 0.625rem);
+      @include nb-rtl(margin-left, 0.625rem);
+
+      .header-selector {
+        width: auto !important;
+      }
+    }
+
+    nb-actions.size-small nb-action {
+      padding: 0.5625rem;
+    }
+    ::ng-deep nb-search button {
+      padding: 0 !important;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      width: auto;
+      z-index: 5;
+
+      .sidebar-toggle {
+        @include nb-ltr(padding-right, 1.25rem);
+        @include nb-rtl(padding-left, 1.25rem);
+        text-decoration: none;
+        color: nb-theme(text-hint-color);
+        nb-icon {
+          font-size: 1.75rem;
+        }
+      }
+
+      .logo {
+        cursor: pointer;
+        font-size: 1.85rem;
+        padding: 0 1.25rem;
+        margin-top: 5px;
+        white-space: nowrap;
+        text-decoration: none;
+
+        .gauzy-simbol {
+          font-size: 0.6rem !important;
+          margin-left: 76px;
+          margin-top: -25px;
+          font-weight: bold;
+          position: absolute;
+        }
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      .control-item {
+        display: none;
+      }
+      .user-action {
+        border: none;
+        padding: 0;
+      }
+    }
+
+    @include media-breakpoint-down(is) {
+      nb-select {
+        display: none;
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      .show-large-up {
+        display: none;
+      }
+      .show-large-down {
+        display: block;
+      }
+    }
+  }
+}
+
+.date-selector {
+  max-width: 160px;
+  min-width: 150px;
+}
+
+.extra-actions {
+  position: fixed;
+  left: 0px;
+  top: 4.75rem;
+  width: 100%;
+  height: calc(100vh - 4.75rem);
+  background: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: -1;
+  padding-top: 2.25rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  div {
+    min-width: 300px;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .organization-selector,
+  .employee-selector,
+  .date-selector,
+  .project-selector {
+    min-width: 300px;
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+.timer-action {
+  cursor: pointer;
+  span {
+    width: 64px;
+  }
+}
+.timer-card {
+  position: relative;
+  padding-top: 12px;
+
+  .btn-close {
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    padding: 2px;
+  }
+}
+
+.organization-selector-container {
+  max-width: auto;
+}
+
+.button.create {
+  background: $orange;
+  box-shadow: var(--gauzy-shadow);
+  &[nbButton].appearance-filled {
+    border-width: 0;
+  }
+  &:hover,
+  &:focus {
+    background: $orange;
+  }
+}
+
+.organization-selector,
+.employee-selector,
+.project-selector {
+  ::ng-deep {
+    .ng-select.ng-select-opened.ng-select-bottom > .ng-select-container {
+      border-radius: nb-theme(button-rectangle-border-radius);
+    }
+    .ng-select.ng-select-single .ng-select-container {
+      height: 2rem;
+      background-color: var(--gauzy-card-1);
+      min-height: 32px;
+      min-width: 4rem;
+    }
+    .ng-select .ng-select-container {
+      box-shadow: var(--gauzy-shadow);
+      border-radius: nb-theme(button-rectangle-border-radius);
+      background-color: var(--gauzy-card-1);
+    }
+  }
+}
+
+.project-selector,
+.employee-selector {
+  min-width: 12.5rem;
+}
+
+:host .actions {
+  margin: 0.625rem;
+  padding: 0.625rem;
+  border-radius: nb-theme(button-rectangle-border-radius);
+  background-color: nb-theme(gauzy-card-2);
+  display: flex;
+  align-items: center;
+  @include nb-ltr(margin-right, 1.5rem);
+  @include nb-rtl(margin-left, 1.5rem);
+}

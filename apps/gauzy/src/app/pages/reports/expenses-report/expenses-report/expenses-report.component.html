@@ -1,0 +1,54 @@
+<nb-card
+	[nbSpinner]="loading"
+	nbSpinnerStatus="primary"
+	nbSpinnerSize="large"
+	class="card-scroll"
+>
+	<nb-card-header>
+		<h4>
+			<ngx-header-title>
+				{{ 'REPORT_PAGE.EXPENSES_REPORT' | translate }}
+			</ngx-header-title>
+		</h4>
+		<ng-container
+			*ngIf="request?.startDate && request?.endDate"
+		>
+			<ngx-date-range-title
+				[start]="request?.startDate"
+				[end]="request?.endDate"
+				[format]="'dddd, LL'"
+			></ngx-date-range-title>
+		</ng-container>
+		<div class="filters">
+			<ngx-gauzy-filters
+				[filters]="filters"
+				[hasActivityLevelFilter]="false"
+				[hasSourceFilter]="false"
+				[hasLogTypeFilter]="false"
+				[saveFilters]="(datePickerConfig$ | async).isSaveDatePicker"
+				(filtersChange)="filtersChange($event)"
+			></ngx-gauzy-filters>
+			<ga-expense-category-select
+				class="action-select"
+				[clearable]="true"
+				[placeholder]="'POP_UPS.ALL_CATEGORIES' | translate"
+			></ga-expense-category-select>
+		</div>
+	</nb-card-header>
+	<nb-card-body class="report-body">
+		<div class="report-container">
+			<div class="daily-time-report">
+				<nb-card>
+					<nb-card-body class="chart">
+						<ngx-line-chart
+							[data]="chartData"
+						></ngx-line-chart>
+					</nb-card-body>
+				</nb-card>
+			</div>
+			<ga-expenses-report-grid
+				[filters]="filters"
+			></ga-expenses-report-grid>
+		</div>
+	</nb-card-body>
+</nb-card>

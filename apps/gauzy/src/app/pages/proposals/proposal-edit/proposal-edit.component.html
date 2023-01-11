@@ -1,0 +1,89 @@
+<nb-card class="main">
+	<nb-card-header class="d-flex">
+		<ngx-back-navigation></ngx-back-navigation>
+		<h4>
+			{{ 'PROPOSALS_PAGE.EDIT_PROPOSAL.EDIT_PROPOSAL' | translate }}
+		</h4>
+	</nb-card-header>
+	<nb-card-body>
+		<form [formGroup]="form">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="form-group">
+							<label class="label">
+								{{ 'PROPOSALS_PAGE.EDIT_PROPOSAL.JOB_POST_URL' | translate }}
+							</label>
+							<input
+								nbInput
+								fullWidth
+								type="text"
+								[placeholder]="'PROPOSALS_PAGE.EDIT_PROPOSAL.PLACEHOLDER.JOB_POST_URL' | translate"
+								formControlName="jobPostUrl"
+								autocomplete="on"
+							/>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="form-group">
+							<label class="label">
+								{{ 'POP_UPS.CONTACT' | translate }}
+							</label>
+							<ga-contact-select
+								[addTag]="true"
+								[clearable]="true"
+								[searchable]="true"
+								[placeholder]="'POP_UPS.CONTACT' | translate"
+								formControlName="organizationContact"
+							></ga-contact-select>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="form-group">
+							<ga-tags-color-input
+								[selectedTags]="form.get('tags').value"
+								(selectedTagsEvent)="selectedTagsEvent($event)"
+								[isOrgLevel]="true"
+							></ga-tags-color-input>
+						</div>
+					</div>
+					<div class="row text-editors">
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label class="label">
+									{{ 'PROPOSALS_PAGE.EDIT_PROPOSAL.JOB_POST_CONTENT' | translate }}
+								</label>
+								<ckeditor
+									formControlName="jobPostContent"
+									[config]="ckConfig"
+								></ckeditor>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label class="label">
+									{{ 'PROPOSALS_PAGE.EDIT_PROPOSAL.PROPOSAL_CONTENT' | translate }}
+								</label>
+								<ckeditor
+									formControlName="proposalContent"
+									[config]="ckConfig"
+								></ckeditor>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</nb-card-body>
+	<nb-card-footer class="text-left">
+		<button
+			[disabled]="form.invalid"
+			(click)="editProposal()"
+			class="edit-btn"
+			status="success"
+			nbButton
+		>
+			{{ 'PROPOSALS_PAGE.EDIT_PROPOSAL.EDIT_PROPOSAL_BUTTON' | translate }}
+		</button>
+	</nb-card-footer>
+</nb-card>

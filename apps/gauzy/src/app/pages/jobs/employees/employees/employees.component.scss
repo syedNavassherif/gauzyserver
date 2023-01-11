@@ -1,0 +1,5 @@
+@import '../../../pipelines/pipelines.component.scss';
+
+:host nb-card-body {
+  height: calc(100vh - 13.5rem) !important;
+}

@@ -1,0 +1,65 @@
+@import 'themes';
+:host {
+  .percentage-col {
+    width: 90px;
+  }
+  .child-items {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+  ::ng-deep {
+    nb-progress-bar {
+      .progress-container {
+        height: 10px !important;
+      }
+      .progress-value {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}
+.child {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: nb-theme(text-primary-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.no-child {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.arrow {
+  width: 32px;
+}
+
+.title {
+  background-color: rgba(126, 126, 143, 0.1);
+  padding: 6px;
+  border-radius: nb-theme(border-radius);
+}
+.times{
+  display: block;
+  text-transform: lowercase;
+  &:first-letter{
+    text-transform: uppercase;
+  }
+}

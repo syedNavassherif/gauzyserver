@@ -1,0 +1,242 @@
+@import 'gauzy/gauzy-dialogs';
+@import 'gauzy/gauzy-overrides';
+
+.main {
+  background-color: var(--gauzy-card-1);
+
+  .body {
+    width: 990px;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .close {
+    cursor: pointer;
+  }
+
+  .notes {
+    height: 198px;
+  }
+
+  label,
+  label.label {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 11px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--gauzy-text-color-2);
+  }
+
+  nb-card-header .employees {
+    margin-left: 20px;
+    padding-left: 20px;
+    border-left: 1px solid #edf1f7;
+    width: 220px;
+  }
+
+  .nb_list.block_style {
+    display: block;
+  }
+
+  .nb_list_item.item {
+    border: none !important;
+    float: left;
+    padding-left: 0;
+  }
+
+  .nb_action.block_style {
+    padding: 2px 5px !important;
+  }
+
+  button.add_new {
+    border-radius: 50% !important;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding-right: 4px !important;
+    margin: 0 !important;
+  }
+
+  span.heading_title {
+    color: #222b45;
+    font-family: Open Sans, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1rem;
+    margin-right: 10px;
+  }
+
+  .nb_toggle {
+    display: block;
+    float: right;
+  }
+
+  input.input_year,
+  input.input_name,
+  input.input_level {
+    padding: 0.4375rem 0.56rem !important;
+  }
+
+  .tab_sections *:focus {
+    outline: none !important;
+  }
+
+  .tab_sections .form-group.extra_padding {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  .tab_sections .tab_min_height {
+    height: 150px;
+    position: relative;
+    clear: both;
+  }
+
+  p.label {
+    color: #222b45;
+    font-size: 15px;
+    font-weight: 700;
+    display: block;
+    padding-top: 5px;
+  }
+
+  .info-btn {
+    margin: 5px 1px;
+  }
+
+  .content-active {
+    nb-card {
+      @include input-appearance(42px, var(--gauzy-sidebar-background-4));
+    }
+  }
+}
+
+:host {
+  nb-tab,
+  nb-card-footer {
+    background-color: var(--gauzy-card-2);
+  }
+  @include input-appearance(42px, var(--gauzy-card-1));
+  ::ng-deep nb-tabset .tabset .tab.active a.tab-link {
+    border-radius: nb-theme(border-radius) nb-theme(border-radius) 0 0;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: var(--text-primary-color);
+
+    nb-icon {
+      svg {
+        fill: var(--text-primary-color);
+      }
+    }
+  }
+
+  ::ng-deep nb-tabset .tabset .tab a.tab-link {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: var(--gauzy-text-color-2);
+
+    nb-icon {
+      svg {
+        fill: var(--gauzy-text-color-2);
+      }
+    }
+
+    &:hover {
+      color: var(--text-primary-color);
+
+      nb-icon {
+        svg {
+          fill: var(--text-primary-color);
+        }
+      }
+    }
+  }
+
+  ::ng-deep {
+    ng-select.ng-select.ng-select-opened > .ng-select-container,
+    ng-select.ng-select .ng-select-container {
+      background-color: var(--gauzy-card-1);
+    }
+  }
+
+  ::ng-deep nb-select.appearance-outline.status-basic .select-button {
+    background-color: var(--gauzy-card-1);
+  }
+
+  ::ng-deep [nbInput].status-basic {
+    background-color: var(--gauzy-card-1);
+  }
+
+  ::ng-deep {
+    nb-tag.size-medium {
+      padding: 1px 14px;
+    }
+
+    .nb-tag-remove.size-medium {
+      border: 1px solid var(--gauzy-text-color-2);
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+    }
+
+    nb-toggle {
+      div.checked + span.text label {
+        color: var(--text-primary-color);
+      }
+    }
+  }
+}
+
+.show-add-language,
+.show-add-award {
+  background-color: var(--gauzy-card-2);
+  border-radius: var(--border-radius);
+  padding: 1rem 0;
+}
+
+.button-add-language,
+.button-add-award {
+  background-color: var(--gauzy-card-2);
+  border-radius: var(--button-rectangle-border-radius);
+  width: fit-content;
+  padding: 5px 6px;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+
+  span.heading_title {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 11px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--gauzy-text-color-2);
+  }
+
+  button {
+    border-width: 2px;
+    border-color: var(--color-success-transparent-300);
+    padding: 2px 3px;
+
+    i {
+      font-size: 11px;
+      font-weight: 900;
+    }
+  }
+}

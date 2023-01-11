@@ -1,0 +1,31 @@
+<nb-card class="card">
+	<nb-card-header>
+		<div class="d-flex flex-column">
+			<span class="cancel"
+				><i class="fas fa-times" (click)="closeDialog()"></i
+			></span>
+			<h5 class="title">
+				{{
+					'CANDIDATES_PAGE.EDIT_CANDIDATE.INTERVIEW.DELETE_FEEDBACK'
+						| translate
+				}}
+			</h5>
+		</div>
+	</nb-card-header>
+	<nb-card-body class="card-body">
+		<span>
+			{{
+				'CANDIDATES_PAGE.EDIT_CANDIDATE.INTERVIEW.DELETE_FEEDBACK_ARE_YOU_SURE'
+					| translate
+			}}</span
+		>
+	</nb-card-body>
+	<nb-card-footer>
+		<button status="basic" outline (click)="closeDialog()" nbButton>
+			{{ 'BUTTONS.CANCEL' | translate }}
+		</button>
+		<button status="danger" class="mr-3 ml-3" (click)="delete()" nbButton>
+			{{ 'BUTTONS.DELETE' | translate }}
+		</button>
+	</nb-card-footer>
+</nb-card>

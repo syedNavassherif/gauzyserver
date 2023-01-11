@@ -1,0 +1,25 @@
+<form class="main-form" [formGroup]="form">
+	<div class="location-form-wrapper">
+		<ga-location-form
+			#locationFormDirective
+			[form]="form"
+			[showAutocompleteSearch]="true"
+			(mapCoordinatesEmitter)="onCoordinatesChanges($event)"
+			(mapGeometryEmitter)="onGeometrySend($event)"
+		></ga-location-form>
+		<div class="actions">
+			<button
+				[disabled]="this.form.invalid"
+				(click)="updateOrganizationSettings()"
+				nbButton
+				status="success"
+			>
+				{{ 'BUTTONS.SAVE' | translate }}
+			</button>
+		</div>
+	</div>
+	<ga-leaflet-map
+		#leafletTemplate
+		(mapClicked)="onMapClicked($event)"
+	></ga-leaflet-map>
+</form>

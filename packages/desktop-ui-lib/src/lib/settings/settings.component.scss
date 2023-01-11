@@ -1,0 +1,284 @@
+.center-card {
+  text-align: center;
+  cursor: pointer;
+}
+
+.all-monitor_icon {
+  font-size: 50px;
+}
+
+.title-tile {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--gauzy-text-color-2);
+}
+
+.subtitle-tile {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gauzy-text-color-2);
+}
+
+.third-party-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.menu-item {
+  cursor: pointer;
+}
+
+.menu-item-active {
+  font-weight: 600;
+}
+
+.monitor-many {
+  position: absolute;
+  top: -8.515px;
+  left: 86px;
+  z-index: 0;
+}
+
+.selected {
+  color: var(--text-primary-color);
+}
+
+.centered-text {
+  margin: auto;
+}
+
+.warning-config {
+  text-align: right;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-warning-default);
+  position: absolute;
+  right: 10px;
+  top: 30px;
+
+  span {
+    background-color: var(--color-warning-transparent-300);
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+}
+
+::ng-deep body {
+  overflow: auto !important;
+}
+
+.margin-icon {
+  height: 42px;
+  margin-top: 64px;
+}
+
+.full-height {
+  height: 80% !important;
+  min-height: 675px !important;
+}
+
+.card-full-height {
+  min-height: 675px;
+}
+
+.top-bottom-space {
+  padding: 1px !important;
+}
+
+.icon-medium {
+  font-size: 48px;
+}
+
+.version-text {
+  text-align: center;
+  margin-top: 48px;
+  margin-bottom: 12px;
+}
+
+.copyright-text,
+.version-text {
+  font-size: 13px;
+  font-weight: 500;
+
+  a {
+    font-size: 14px;
+    color: var(--text-primary-color);
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer-version-text {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.button-big {
+  font-size: 12px;
+  font-weight: 600;
+  height: 32px;
+}
+
+.center-content {
+  position: relative;
+}
+
+.icon-spin {
+  animation: rotate 1s ease-in-out 0s infinite;
+}
+
+.update-message {
+  margin-top: 15px;
+  font-weight: 600;
+  color: rgb(100, 100, 100);
+  font-size: 12px;
+}
+
+.update-message-content {
+  border: unset;
+  padding: 2px 4px;
+  border-radius: calc(var(--border-radius) / 2);
+}
+
+.log-box {
+  background-color: black;
+  color: white;
+  font-size: 11px;
+  text-align: left;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.log-content {
+  min-height: 240px;
+  overflow-y: auto;
+  max-height: 240px;
+  padding: 4px 0 0;
+}
+
+.content-text {
+  color: white;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 8px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+:host {
+  nb-sidebar {
+    background-color: var(--gauzy-sidebar-background-3);
+  }
+
+  nb-sidebar ::ng-deep .scrollable {
+    padding-right: 0;
+  }
+
+  nb-list {
+    width: 100%;
+
+    .menu-item-active {
+      background-color: var(--layout-background-color);
+      border-left: 6px solid var(--text-primary-color);
+      border-radius: 4px 0 0 4px;
+      font-weight: 600;
+      width: 100%;
+    }
+  }
+
+  h4 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    color: var(--gauzy-text-color-1);
+  }
+
+  h6 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--gauzy-text-color-2);
+  }
+
+  nb-tab.content-active {
+    background-color: var(--gauzy-card-2);
+    border-radius: 0 var(--border-radius) var(--border-radius);
+    height: calc(100vh - 10rem);
+
+    nb-card {
+      margin-bottom: 1rem;
+    }
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .monitors,
+  .notification {
+    nb-card {
+      border-radius: var(--border-radius);
+    }
+
+    nb-card-body {
+      background-color: var(--gauzy-card-2);
+      border-radius: var(--border-radius);
+      display: flex;
+      flex-direction: column;
+    }
+
+  }
+}
+
+:host {
+  ::ng-deep {
+    nb-toggle {
+      div.checked+span.text {
+        color: var(--text-primary-color) !important;
+      }
+      .toggle-label {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.file{
+  gap: 5px;
+}
+
+.file-uri {
+  width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--text-primary-color);
+}
+
+nb-card {
+  margin-bottom: 0.25rem;
+}
+
+nb-card-body {
+  padding: 1rem;
+}
+
+.main-layout {
+  overflow: auto;
+  height: calc(100vh - 3.5rem);
+}

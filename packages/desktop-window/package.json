@@ -1,0 +1,37 @@
+{
+	"name": "@gauzy/desktop-window",
+	"version": "0.1.0",
+	"description": "Ever Gauzy Platform desktop window module",
+	"author": {
+		"name": "Ever Co. LTD",
+		"email": "ever@ever.co",
+		"url": "https://ever.co"
+	},
+	"license": "AGPL-3.0",
+	"private": true,
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"directories": {
+		"lib": "dist"
+	},
+	"publishConfig": {
+		"access": "restricted"
+	},
+	"scripts": {
+		"build": "rimraf dist && yarn run compile",
+		"compile": "tsc -p tsconfig.build.json"
+	},
+	"keywords": [],
+	"dependencies": {
+		"@electron/remote": "^2.0.8",
+		"electron": "20.2.0",
+		"electron-log": "^4.4.8",
+		"electron-store": "^8.1.0"
+	},
+	"devDependencies": {
+		"@types/node": "^17.0.33"
+	}
+}

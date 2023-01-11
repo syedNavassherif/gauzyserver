@@ -1,0 +1,240 @@
+<nb-card
+	class="main card-scroll"
+	[nbSpinner]="loading"
+	nbSpinnerStatus="primary"
+	nbSpinnerSize="large"
+>
+	<nb-card-header class="d-flex align-items-start">
+		<ngx-back-navigation></ngx-back-navigation>
+		<h4>
+			{{ 'INVOICES_PAGE.PAYMENTS.HEADER' | translate }}
+			{{ invoice ? invoice.invoiceNumber : '' }}
+		</h4>
+	</nb-card-header>
+	<nb-card-body class="body">
+		<div class="info-container">
+			<div class="date-and-value">
+				<div class="block w-100">
+					<div class="row">
+						<div class="col-6 first-column">
+							<div>
+								{{ 'INVOICES_PAGE.DUE_DATE' | translate }}
+							</div>
+							<div>:</div>
+						</div>
+						<div class="col-6 pr-0 pl-0">
+							{{ invoice ? (invoice.dueDate | dateFormat) : '' }}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-6 first-column">
+							<div>
+								{{
+									'INVOICES_PAGE.PAYMENTS.TOTAL_VALUE'
+										| translate
+								}}
+							</div>
+							<div>:</div>
+						</div>
+						<div class="col-6 pr-0 pl-0">
+							{{
+								invoice?.totalValue || 0
+									| currency: invoice?.currency
+									| position: organization?.currencyPosition
+							}}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-6 first-column">
+							<div>
+								{{
+									'INVOICES_PAGE.PAYMENTS.LEFT_TO_PAY'
+										| translate
+								}}
+							</div>
+							<div>:</div>
+						</div>
+						<div class="col-6 pr-0 pl-0">
+							{{
+								leftToPay || 0
+									| currency: invoice?.currency
+									| position: organization?.currencyPosition
+							}}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-6 first-column">
+							<div>
+								{{
+									'INVOICES_PAGE.PAYMENTS.RECEIVED_FROM'
+										| translate
+								}}
+							</div>
+							<div>:</div>
+						</div>
+						<div class="col-6 pr-0 pl-0">
+							{{ invoice?.toContact?.name }}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-6 first-column">
+							<div>
+								{{
+									'INVOICES_PAGE.PAYMENTS.RECEIVER'
+										| translate
+								}}
+							</div>
+							<div>:</div>
+						</div>
+						<div class="col-6 pr-0 pl-0">
+							{{ invoice?.fromOrganization?.name }}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="total-paid-label">
+				{{ 'INVOICES_PAGE.PAYMENTS.TOTAL_PAID' | translate }}:
+				{{
+					totalPaid || 0
+						| currency: invoice?.currency
+						| position: organization?.currencyPosition
+				}}
+				<span>
+					<div class="progress-bar-container">
+						<div class="progress-bar">
+							<div class="paid-percent">
+								{{ barWidth }}%
+								{{ 'INVOICES_PAGE.PAYMENTS.PAID' | translate }}
+							</div>
+							<span
+								id="progress-bar-inner"
+								class="progress-bar-inner"
+								style="width: 0%"
+							></span>
+						</div>
+					</div>
+				</span>
+			</div>
+		</div>
+		<div class="custom-container">
+			<div class="gauzy-button-container">
+				<ngx-gauzy-button-action
+					[isDisable]="disableButton"
+					[buttonTemplate]="actionButtons"
+					[buttonTemplateVisible]="visibleButton"
+					[hasLayoutSelector]="false"
+				>
+				</ngx-gauzy-button-action>
+			</div>
+			<div class="table-scroll-container">
+				<ng2-smart-table
+					class="tags-table"
+					[settings]="settingsSmartTable"
+					[source]="smartTableSource"
+					(userRowSelect)="selectPayment($event)"
+					style="cursor: pointer"
+					#paymentsTable
+				>
+				</ng2-smart-table>
+			</div>
+		</div>
+	</nb-card-body>
+</nb-card>
+
+<ng-template #actionButtons>
+	<div class="btn-group actions">
+		<ng-template ngxPermissionsOnly="ORG_PAYMENT_ADD_EDIT">
+			<button
+				nbButton
+				size="small"
+				status="basic"
+				class="action info-text-1"
+				(click)="sendReceipt()"
+			>
+				<nb-icon icon="email-outline"></nb-icon>
+				{{ 'BUTTONS.SEND_RECEIPT' | translate }}
+			</button>
+			<button
+				size="small"
+				status="basic"
+				class="action primary"
+				(click)="editPayment()"
+				[disabled]="disableButton"
+				nbButton
+			>
+				<nb-icon icon="edit-outline"></nb-icon>
+				{{ 'BUTTONS.EDIT' | translate }}
+			</button>
+			<button
+				size="small"
+				status="basic"
+				class="action"
+				(click)="deletePayment()"
+				[disabled]="disableButton"
+				nbButton
+				[nbTooltip]="'BUTTONS.DELETE' | translate"
+			>
+				<nb-icon status="danger" icon="trash-2-outline"></nb-icon>
+			</button>
+		</ng-template>
+	</div>
+</ng-template>
+<ng-template #visibleButton>
+	<ng-template ngxPermissionsOnly="ORG_PAYMENT_ADD_EDIT">
+		<button
+			status="success"
+			size="small"
+			(click)="recordPayment()"
+			nbButton
+		>
+			<nb-icon icon="plus-outline"></nb-icon>
+			{{ 'BUTTONS.ADD' | translate }}
+		</button>
+		<button
+			nbButton
+			size="small"
+			status="basic"
+			class="action info-text-1"
+			(click)="exportToCsv()"
+			[disabled]="payments ? payments.length <= 0 : true"
+		>
+			<nb-icon icon="file-text-outline"></nb-icon>
+			{{ 'BUTTONS.EXPORT_TO_CSV' | translate }}
+		</button>
+		<button
+			nbButton
+			size="small"
+			status="basic"
+			class="action primary"
+			(click)="download()"
+			[disabled]="!payments?.length"
+		>
+			<nb-icon icon="download-outline"></nb-icon>
+			{{ 'BUTTONS.DOWNLOAD' | translate }}
+		</button>
+		<button
+			status="basic"
+			class="action secondary"
+			size="small"
+			debounceClick
+			(throttledClick)="recordFullPayment()"
+			[debounceTime]="500"
+			[disabled]="isDisabled"
+			nbButton
+		>
+			<nb-icon icon="credit-card-outline"></nb-icon>
+			{{ 'BUTTONS.RECORD_FULL_PAYMENT' | translate }}
+		</button>
+		<button
+			status="basic"
+			class="action secondary"
+			size="small"
+			(click)="invoiceRemainingAmount()"
+			[disabled]="isDisabled"
+			nbButton
+		>
+			<nb-icon icon="file-text-outline"></nb-icon>
+			{{ 'BUTTONS.INVOICE_REMAINING_AMOUNT' | translate }}
+		</button>
+	</ng-template>
+</ng-template>

@@ -1,0 +1,37 @@
+@import 'var';
+
+:host .input,
+:host input {
+  display: flex;
+  align-items: center;
+  box-shadow: var(--gauzy-shadow) inset;
+  color: nb-theme(text-basic-color);
+  border-radius: var(--border-radius);
+  height: 42px;
+  position: relative;
+  border: unset;
+  &:hover {
+    border-color: nb-theme(color-primary-hover);
+    color: nb-theme(text-basic-color);
+    &:focus {
+      background: rgba(126, 126, 143, 0.05);
+    }
+  }
+  &:active {
+    background: rgba(126, 126, 143, 0.05);
+  }
+  .icon {
+    position: absolute;
+    @include nb-ltr(right, 8px);
+    @include nb-rtl(left, -8px);
+  }
+}
+
+input {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.input {
+  width: 90%;
+}

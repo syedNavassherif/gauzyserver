@@ -1,0 +1,48 @@
+<nb-accordion *ngIf="isAccordion" class="accordion workspace">
+	<nb-accordion-item
+		[collapsed]="controlled"
+		(collapsedChange)="onCollapse($event)"
+	>
+		<nb-accordion-item-header class="principal">
+			<ng-container *ngTemplateOutlet="logo"></ng-container>
+			<div class="organization" *ngIf="!isCollapse">
+				<img [src]="organization?.imageUrl" [alt]="organization?.name"/>
+				<div class="description text">
+					<div [nbTooltip]="organization?.name">{{ organization?.name }}</div>
+					<div [nbTooltip]="organization?.website">{{ organization?.website }}</div>
+				</div>
+			</div>
+		</nb-accordion-item-header>
+		<nb-accordion-item-body class="setting action">
+			<ga-sidebar-menu [items]="actions"></ga-sidebar-menu>
+		</nb-accordion-item-body>
+		<nb-accordion-item-body class="setting">
+			<ga-sidebar-menu [items]="[settings]"></ga-sidebar-menu>
+		</nb-accordion-item-body>
+		<nb-accordion-item-body class="item footer"></nb-accordion-item-body>
+	</nb-accordion-item>
+</nb-accordion>
+
+<div *ngIf="!isAccordion">
+	<ng-container *ngTemplateOutlet="logo"></ng-container>
+</div>
+
+<ng-template #logo>
+	<div
+		*ngIf="isCollapse"
+		[ngClass]="
+			theme === 'default' ||
+			theme === 'corporate' ||
+			theme === 'gauzy-light' ||
+			theme === 'material-light'
+				? ''
+				: 'white-svg'
+		"
+		class="logo"
+		(click)="navigateHome()"
+	>
+		<object data="assets/images/logos/logo_Gauzy.svg" type="image/svg+xml">
+			<img src="assets/images/logos/logo_Gauzy.png" />
+		</object>
+	</div>
+</ng-template>

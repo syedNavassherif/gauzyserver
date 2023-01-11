@@ -1,0 +1,121 @@
+<nb-card class="main">
+	<nb-card-header class="d-flex flex-column">
+		<span class="cancel"
+			><i class="fas fa-times" (click)="dialogRef.close()" s></i
+		></span>
+		<h5 class="title">
+			{{
+				(productType
+					? 'INVENTORY_PAGE.EDIT_PRODUCT_TYPE'
+					: 'INVENTORY_PAGE.ADD_PRODUCT_TYPE'
+				) | translate
+			}}
+		</h5>
+	</nb-card-header>
+	<nb-card-body>
+		<form
+			[formGroup]="form"
+			#productTypeForm="ngForm"
+			(ngSubmit)="onSubmit()"
+		>
+			<div class="row">
+				<div class="col-12">
+					<div class="form-group">
+						<label class="label" for="language">
+							{{ 'INVENTORY_PAGE.LANGUAGE' | translate }}
+						</label>
+						<ngx-language-selector
+							id="language"
+							[placeholder]="
+								'INVENTORY_PAGE.LANGUAGE' | translate
+							"
+							class="d-block"
+							size="medium"
+							[template]="'ng-select'"
+							[selectedLanguageCode]="selectedLanguage"
+							(selectedLanguageEvent)="onLangChange($event)"
+						></ngx-language-selector>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-4">
+					<label class="label" for="icon">
+						{{ 'INVENTORY_PAGE.ICON' | translate }}
+					</label>
+					<ng-select
+						class="icon-select"
+						[clearable]="false"
+						[items]="icons"
+						bindLabel="name"
+						[placeholder]="'INVENTORY_PAGE.ICON' | translate"
+						id="icon"
+						formControlName="icon"
+						appendTo="body"
+					>
+						<ng-template
+							ng-option-tmp
+							let-item="item"
+							let-index="index"
+						>
+							<nb-icon [icon]="item"></nb-icon>
+						</ng-template>
+						<ng-template ng-label-tmp let-item="item">
+							<div class="selector-template">
+								<nb-icon [icon]="item"></nb-icon>
+							</div>
+						</ng-template>
+					</ng-select>
+				</div>
+				<div class="col-8">
+					<div class="form-group">
+						<label class="label" for="name">
+							{{ 'INVENTORY_PAGE.NAME' | translate }}
+						</label>
+						<input
+							fullWidth
+							id="name"
+							type="text"
+							nbInput
+							formControlName="name"
+							[placeholder]="'INVENTORY_PAGE.NAME' | translate"
+						/>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<label class="label" for="description">{{
+						'INVENTORY_PAGE.DESCRIPTION' | translate
+					}}</label>
+					<textarea
+						fullWidth
+						id="description"
+						nbInput
+						formControlName="description"
+						[placeholder]="'INVENTORY_PAGE.DESCRIPTION' | translate"
+					></textarea>
+				</div>
+			</div>
+		</form>
+	</nb-card-body>
+	<nb-card-footer class="text-left">
+		<button
+			(click)="dialogRef.close()"
+			status="basic"
+			class="mr-2"
+			outline
+			nbButton
+		>
+			{{ 'BUTTONS.CANCEL' | translate }}
+		</button>
+		<button
+			[disabled]="form.invalid"
+			(click)="productTypeForm.ngSubmit.emit()"
+			status="success"
+			nbButton
+		>
+			{{ 'BUTTONS.SAVE' | translate }}
+		</button>
+	</nb-card-footer>
+</nb-card>

@@ -1,0 +1,35 @@
+<nb-card>
+	<nb-card-body>
+		<form [formGroup]="form">
+			<div class="container">
+				<div class="row">
+					<div class="col-4">
+						<ga-location-form
+							#locationFormDirective
+							[form]="form"
+							[showAutocompleteSearch]="true"
+							(mapCoordinatesEmitter)="onCoordinatesChanges($event)"
+							(mapGeometryEmitter)="onGeometrySend($event)"
+						></ga-location-form>
+					</div>
+					<div class="col-8">
+						<ga-leaflet-map
+							#leafletTemplate
+							(mapClicked)="onMapClicked($event)"
+						></ga-leaflet-map>
+					</div>
+				</div>
+			</div>
+			<div class="actions">
+				<button
+					[disabled]="form.invalid"
+					(click)="submitForm()"
+					nbButton
+					status="success"
+				>
+					{{ 'BUTTONS.SAVE' | translate }}
+				</button>
+			</div>
+		</form>
+	</nb-card-body>
+</nb-card>

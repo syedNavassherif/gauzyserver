@@ -1,0 +1,154 @@
+@import 'report';
+
+:host {
+  ::ng-deep {
+    nb-progress-bar.size-tiny .progress-container {
+      height: 10px;
+      background-color: nb-theme(gauzy-card-2);
+    }
+  }
+  .card {
+    border-radius: nb-theme(border-radius);
+    background: var(gauzy-sidebar-background-4);
+    box-shadow: var(--gauzy-shadow);
+    min-width: 189px;
+    max-width: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: unset;
+    &:hover {
+      box-shadow: 0px 36px 18px -24px rgba(0, 0, 0, 0.15);
+    }
+  }
+  .curser-pointer {
+    cursor: pointer;
+    border-radius: nb-theme(border-radius) nb-theme(border-radius) 0px 0px;
+  }
+  .activity {
+    .image-container {
+      background: rgba($color: #000000, $alpha: 0.1);
+      min-height: 130px;
+      position: relative;
+      .hover {
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba($color: #000000, $alpha: 0.7);
+        opacity: 0;
+        z-index: 9;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.5s;
+        border-radius: nb-theme(border-radius) nb-theme(border-radius) 0px 0px;
+      }
+      .view-button {
+        height: 100%;
+        width: 100%;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        button {
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 16px;
+          letter-spacing: -0.009em;
+          text-align: left;
+        }
+      }
+
+      &.select-mode {
+        .hover {
+          justify-content: normal;
+        }
+        .select-hidden {
+          display: none;
+        }
+      }
+
+      &.select-mode,
+      &:hover {
+        .hover {
+          opacity: 1;
+        }
+      }
+
+      .no-image {
+        padding: 8px;
+        background: rgba($color: #000000, $alpha: 0.6);
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 5px;
+        text-align: center;
+      }
+      .screenshot-count {
+        padding: 8px;
+        background: rgba($color: #000000, $alpha: 0.6);
+        color: nb-theme(color-danger-default);
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        border-radius: nb-theme(border-radius);
+        text-align: center;
+      }
+
+      img {
+        width: 100%;
+        height: 130px;
+        border-radius: nb-theme(border-radius) nb-theme(border-radius) 0px 0px;
+        object-fit: cover;
+        &.default-image {
+          object-fit: contain;
+        }
+      }
+    }
+  }
+  .no-activity{
+    background-color: var(--gauzy-sidebar-background-4);
+    border-radius: var(--border-radius);
+  }
+}
+.hour-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 11px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-transform: lowercase;
+}
+
+::ng-deep {
+	.cdk-overlay-container {
+		nb-overlay-container {
+			nb-list {
+				overflow: hidden !important;
+			}
+		}
+	}
+}
+
+.slot-info {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 11px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  .caption {
+		font-size: 11px;
+		font-weight: 400;
+		line-height: 11px;
+		letter-spacing: 0em;
+		color: var(--gauzy-text-color-2);
+	}
+}

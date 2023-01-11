@@ -1,0 +1,251 @@
+@import '../../styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+
+@include nb-install-component() {
+  .menu-sidebar ::ng-deep .scrollable {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0rem !important;
+    padding-top: 0.1rem !important;
+  }
+
+  .settings-sidebar.expanded {
+    width: 22.5rem !important;
+    height: fit-content;
+    z-index: 1042;
+  }
+
+  .changelog-sidebar.expanded {
+    width: 29.5rem !important;
+    height: fit-content;
+    z-index: 1042;
+  }
+
+  nb-user {
+    cursor: pointer;
+  }
+
+  .user-container {
+    margin-top: auto;
+    border-top: 1px solid nb-theme(divider-color);
+    padding-top: 0.65rem;
+    padding-bottom: 0.65rem;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding-left: 8px;
+    z-index: 2;
+  }
+
+  .menu-sidebar-rtl {
+    order: 2 !important;
+  }
+
+  .menu-sidebar,
+  .user-workspace {
+    order: 0 !important;
+  }
+
+  gauzy-user-menu {
+    position: absolute;
+    bottom: 0px;
+    @include nb-ltr(left, 0px);
+    @include nb-rtl(right, 0px);
+    z-index: 1041;
+  }
+
+  div.chevron {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+    margin-bottom: 0.625rem;
+    button {
+      height: 1.625rem;
+      width: 1.625rem;
+      padding: 0;
+      margin: 0 0.5rem;
+    }
+    &.collapsed {
+      justify-content: center;
+    }
+  }
+}
+nb-sidebar[tag='user-workspace'] {
+  ::ng-deep {
+    .scrollable {
+      background: nb-theme(gauzy-sidebar-background-1);
+    }
+  }
+}
+
+nb-sidebar[tag='menu-sidebar'] {
+  ::ng-deep {
+    nb-menu {
+      margin: 0;
+      height: 100%;
+    }
+    .scrollable {
+      background: nb-theme(gauzy-sidebar-background-2);
+    }
+  }
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: nb-theme(sidebar-width);
+  width: nb-theme(sidebar-width);
+  padding: 0.75rem;
+  button.hidden-menu {
+    padding: 0 0.5rem;
+    height: 1.625rem;
+    width: 1.625rem;
+    margin: 0 0.625rem;
+  }
+  ngx-gauzy-logo {
+    width: 100%;
+    z-index: 2;
+  }
+  &.not-collapsed {
+    padding: 0.75rem 0;
+  }
+  &.compacted {
+    width: nb-theme(sidebar-width-compact);
+    justify-content: center;
+    align-items: center;
+    button.hidden-menu {
+      margin-left: 0;
+    }
+    ::ng-deep .accordion.workspace {
+      box-shadow: none;
+      width: 1.75rem;
+      height: auto;
+      .logo,
+      .organization,
+      nb-accordion-item-body {
+        display: none;
+      }
+      nb-accordion-item-header {
+        padding: 0.75rem 0;
+        &.principal {
+          box-shadow: unset;
+        }
+        nb-icon {
+          left: 0rem;
+        }
+      }
+    }
+  }
+}
+::ng-deep {
+  nb-layout
+    .layout
+    .layout-container
+    nb-sidebar[tag='menu-sidebar']
+    .main-container-fixed {
+    top: 0;
+    height: 100vh;
+    z-index: 1041;
+  }
+  nb-layout
+    .layout
+    .layout-container
+    nb-sidebar[tag='user-workspace']
+    .main-container-fixed {
+    top: 0;
+    height: 100vh;
+    z-index: 1041;
+  }
+  nb-layout
+    .layout
+    .layout-container
+    nb-sidebar.settings-sidebar.expanded
+    .main-container-fixed {
+    top: 10px;
+    height: fit-content;
+    max-height: 100vh;
+    width: 22.5rem !important;
+    box-shadow: 0px 6px 30px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1041;
+    border-radius: nb-theme(border-radius);
+    .scrollable {
+      background-color: nb-theme(background-basic-color-1);
+      border-radius: nb-theme(border-radius);
+      overflow: unset;
+    }
+  }
+  nb-layout
+    .layout
+    .layout-container
+    nb-sidebar.changelog-sidebar.expanded
+    .main-container-fixed {
+    top: calc(var(--header-height) - 27px);
+    height: fit-content;
+    max-height: 100vh;
+    width: 22.5rem !important;
+    box-shadow: 0px 6px 30px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1041;
+    border-radius: nb-theme(border-radius);
+    .scrollable {
+      background-color: nb-theme(background-basic-color-1);
+      border-radius: nb-theme(border-radius);
+      padding: 0;
+    }
+  }
+
+  @media screen and (min-width: 1940px) {
+    nb-layout.window-mode
+      nb-layout-header.fixed
+      ~ .layout-container
+      nb-sidebar
+      .main-container-fixed {
+      top: 0;
+      height: 100vh;
+      z-index: 1041;
+    }
+  }
+}
+
+::ng-deep {
+  nb-layout
+    .layout
+    .layout-container
+    nb-sidebar
+    .main-container-fixed
+    > .scrollable {
+    overflow-y: auto;
+  }
+}
+
+.custom-box {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.custom-box .custom-row.logo {
+  flex: 0 1 auto;
+  align-self: center;
+}
+
+.custom-box .custom-row.menu {
+  flex: 1 1 auto;
+  overflow-y: overlay;
+  padding: 0 0.75rem;
+}
+
+.custom-box .custom-row.button {
+  flex: 0 1 auto;
+}
+:host
+  ::ng-deep
+  nb-layout
+  .layout
+  .layout-container
+  nb-sidebar.settings-sidebar.expanded
+  .main-container-fixed {
+  @include nb-ltr(right, 20px);
+  @include nb-rtl(left, 20px);
+}

@@ -1,0 +1,70 @@
+<ng-container *ngxPermissionsOnly="item?.data?.permissionKeys">
+	<ng-container *ngIf="!collapse; else withNbTooltip">
+		<div
+			[ngClass]="{ 'border-bottom': !isLast() }"
+			*ngIf="!item?.hidden"
+			[gaTooltip]="item?.title"
+			[icon]="item?.icon"
+			[class]="
+				selected
+					? !collapse
+						? 'sub-item selected custom'
+						: 'sub-item selected'
+					: !collapse
+					? 'sub-item custom'
+					: 'sub-item'
+			"
+			(click)="select()"
+		>
+			<span class="info">
+				<i [class]="item?.icon"></i
+				><span *ngIf="collapse || mouseHover"
+					><a
+						[href]="adpatExternalUrl(item?.link)"
+						onclick="return false;"
+						>{{ item?.title }}</a
+					></span
+				>
+			</span>
+		</div>
+	</ng-container>
+	<ng-template #withNbTooltip>
+		<div
+			[ngClass]="{ 'border-bottom': !isLast() }"
+			*ngIf="!item?.hidden"
+			[nbTooltip]="item?.title"
+			nbTooltipPlacement="right"
+			[class]="
+				selected
+					? !collapse
+						? 'sub-item selected custom'
+						: 'sub-item selected'
+					: !collapse
+					? 'sub-item custom'
+					: 'sub-item'
+			"
+		>
+			<span (click)="select()" class="info w-100">
+				<i [class]="item?.icon"></i
+				><span *ngIf="collapse || mouseHover"
+					><a
+						[href]="adpatExternalUrl(item?.link)"
+						onclick="return false;"
+						>{{ item?.title }}</a
+					></span
+				>
+			</span>
+			<button
+				*ngIf="item?.data?.add"
+				class="float-right plus"
+				status="basic"
+				outline
+				size="tiny"
+				(click)="add()"
+				nbButton
+			>
+				<i class="fas fa-plus"></i>
+			</button>
+		</div>
+	</ng-template>
+</ng-container>

@@ -1,0 +1,25 @@
+@import '../payments/payments.component.scss';
+
+:host {
+  nb-card-body {
+    height: calc(100vh - 17.5rem) !important;
+  }
+}
+
+ngx-request-approval-action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 5px;
+  ::ng-deep button {
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.15);
+    &.req-green {
+      background-color: rgba(0, 214, 143, 1) !important;
+      border-color: rgba(0, 214, 143, 1) !important;
+    }
+    &.req-red {
+      background-color: rgba(255, 94, 94, 1) !important;
+      border-color: rgba(255, 94, 94, 1) !important;
+    }
+  }
+}

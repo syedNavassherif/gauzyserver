@@ -1,0 +1,20 @@
+export const ReportsPageData = {
+	header: 'All Reports',
+	timeTracking: 'Time Tracking',
+	timeAndActivity: 'Time & Activity',
+	weekly: 'Weekly',
+	appsUrls: 'Apps & URLs',
+	manualTimeEdits: 'Manual time edits',
+	expense: 'Expense',
+	payments: 'Payments',
+	amountsOwed: 'Amounts owed',
+	timeOff: 'Time Off',
+	weeklyLimits: 'Weekly limits',
+	dailyLimits: 'Daily limits',
+	invoicing: 'Invoicing',
+	reports: 'Reports',
+	projectBudgets: 'Project budgets',
+	clientBudgets: 'Client budgets',
+	totalHours: '00:00:00',
+	progress: '0%'
+};

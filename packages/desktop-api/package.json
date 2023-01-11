@@ -1,0 +1,40 @@
+{
+	"name": "@gauzy/desktop-api",
+	"version": "0.1.0",
+	"description": "Ever Gauzy Platform desktop APIs",
+	"author": {
+		"name": "Ever Co. LTD",
+		"email": "ever@ever.co",
+		"url": "https://ever.co"
+	},
+	"license": "AGPL-3.0",
+	"private": true,
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"directories": {
+		"lib": "dist"
+	},
+	"publishConfig": {
+		"access": "restricted"
+	},
+	"scripts": {
+		"build": "rimraf dist && yarn run compile",
+		"compile": "tsc -p tsconfig.app.json"
+	},
+	"keywords": [],
+	"dependencies": {
+		"@grpc/grpc-js": "^1.6.7",
+		"@nestjs/common": "^9.2.1",
+		"@nestjs/core": "^9.2.1",
+		"@nestjs/typeorm": "^9.0.1",
+		"nest-router": "^1.0.9"
+	},
+	"devDependencies": {
+		"@gauzy/integration-wakatime": "^0.1.0",
+		"@nestjs/testing": "^9.2.1",
+		"@types/node": "^17.0.33"
+	}
+}

@@ -1,0 +1,58 @@
+@import 'gauzy/_gauzy-table';
+.date-and-value {
+  display: flex;
+  flex-direction: column;
+  width: 24%;
+}
+
+.info-container {
+  display: flex;
+}
+
+.total-paid-label {
+  margin-left: 8%;
+}
+
+.progress-bar {
+  background-color: rgba(126, 126, 143, 0.2);
+  height: 32px;
+  width: 200px;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+.progress-bar-inner {
+  display: block;
+  height: 32px;
+  background-color: rgba(0, 214, 143, 1);
+  border-radius: 3px;
+  position: relative;
+}
+
+.paid-percent {
+  position: absolute;
+  z-index: 1;
+  margin-left: 1%;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.custom-container {
+  margin-top: 32px;
+  background-color: var(--gauzy-card-2);
+  padding: 0 12px 12px 12px;
+  border-radius: 8px;
+  .gauzy-button-container{
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.body{
+  background-color: var(--gauzy-card-2);
+  border-radius: 0 0 8px 8px;
+}
+
+.first-column {
+  display: flex;
+  justify-content: space-between;
+}

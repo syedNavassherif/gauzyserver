@@ -1,0 +1,27 @@
+export const OrganizationHelpCenterPage = {
+	addButtonCss: 'div.add-icon-field > button[status="success"]',
+	languageDropdownCss: 'div.form-group > ngx-language-selector > ng-select',
+	dropdownOptionCss: '.option-list nb-option',
+	toggleButtonCss: 'div.toggle',
+	iconDropdownCss:
+		'div.form-group > nb-select > button[class="select-button placeholder"]',
+	colorInputCss: 'input[id="color"]',
+	nameInputCss: 'input[id="name"]',
+	descriptioninputCss: 'input[id="description"]',
+	saveButtonCss: 'nb-card-footer.text-right > button[status="success"]',
+	settingsButtonCss: 'nb-action.icons',
+	deleteButtonCss: 'div.save-button > button[status="danger"]',
+	settingsDropdownOptionCss: 'nb-menu.context-menu > ul.menu-items li',
+	toastrMessageCss: 'nb-toast.ng-trigger',
+	verifyBaseCss: 'div.base > div > span.text',
+	closeDeleteButtonCss: 'g[data-name="close"]',
+	verifyCategortCss: 'div[class="base ng-star-inserted child"]',
+	arrowButtonCss:'span.toggle-children',
+	addArticleButtonCss: 'button[status="success"]',
+	nameOfTheArticleInputCss: 'input[formcontrolname="name"]',
+	descOfTheArticleInputCss: 'input[formcontrolname="desc"]',
+	employeePlaceholderCss: 'nb-select[ng-reflect-placeholder="Add or Remove Employees"]',
+	employeeDropdownCss: 'ul.option-list > nb-option',
+	articleTextCss: 'div[id="cke_1_contents"] > iframe[class="cke_wysiwyg_frame cke_reset"]',
+	articleSaveBtnCss: 'div.save-button > button[status="success"]'
+};

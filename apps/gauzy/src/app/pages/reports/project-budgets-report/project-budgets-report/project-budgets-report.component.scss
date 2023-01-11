@@ -1,0 +1,57 @@
+@import 'report';
+@import "var";
+
+.employees-column {
+  width: 25%;
+  max-width: 300px;
+}
+.project-column {
+  width: 20%;
+  min-width: 20%;
+
+  .project-cell {
+    display: inline;
+  }
+}
+.spent-column {
+  width: 10%;
+}
+.budget-column {
+  width: 35%;
+  max-width: 35%;
+}
+.remaining-column {
+  width: 10%;
+}
+
+:host .budget-row {
+  @include nb-ltr(padding-right, 5%);
+  @include nb-rtl(padding-left, 5%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .progress-wrapper {
+    width: 65%
+  }
+
+  .currency-span {
+    white-space: nowrap;
+    @include nb-ltr(text-align, right);
+    @include nb-rtl(text-align, left);
+  }
+}
+
+@include respond(dsk) {
+  .budget-row .progress-wrapper {
+    width: 100%;
+  }
+}
+@include respond(md) {
+  .employees-header {
+    display: inline;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}

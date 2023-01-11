@@ -1,0 +1,99 @@
+@import 'gauzy/_gauzy-table';
+
+.setting-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.body-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.sub-header {
+  margin-bottom: 20px;
+  font-weight: bold;
+  background-color: nb-theme(gauzy-card-3);
+  padding: 0.75rem;
+  border-radius: nb-theme(border-radius);
+  color: nb-theme(gauzy-text-color-2);
+}
+
+:host .header-content {
+  display: flex;
+  margin: auto 8px auto 16px;
+
+  .header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    @include nb-ltr(padding-left, 42px);
+    @include nb-rtl(padding-right, 42px);
+  }
+
+  .block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+
+    .block-item {
+      width: 11rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .block-item-big {
+      width: 17.5rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+}
+
+.container {
+  padding: 0;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+:host {
+  nb-card,
+  nb-card-header {
+    background-color: var(--gauzy-card-2);
+  }
+
+  .settings-body {
+    padding: 0;
+  }
+
+  .table-scroll {
+    height: calc(100vh - 23.5rem);
+    @include nb-ltr(padding, 1rem 0.5rem 1rem 18px);
+    @include nb-rtl(padding, 1rem 18px 1rem 0.5rem);
+    overflow: auto;
+  }
+
+  .no-data {
+    height: calc(100vh - 19.25rem);
+    padding: 8px;
+  }
+}
+.container {
+  padding: 0.5rem;
+  overflow-x: scroll;
+  height: 100%;
+  margin: 0;
+  max-width: unset;
+}
+.history {
+  align-items: center;
+  gap: 8px;
+}

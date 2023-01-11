@@ -1,0 +1,16 @@
+@import 'themes';
+
+.add-criterion {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: var(--gauzy-card-2);
+  padding: 1rem;
+  border-radius: nb-theme(border-radius);
+  height: calc(100vh - 16.5rem);
+  overflow-y: auto;
+  &-card {
+    width: 49.5%;
+  }
+}

@@ -1,0 +1,11 @@
+@import 'gauzy/_gauzy-dialogs';
+
+.in-valid {
+  border: 1px solid #ff3d71;
+  border-radius: 0.25rem;
+}
+:host {
+  nb-card {
+    background-color: var(--gauzy-card-1);
+  }
+}

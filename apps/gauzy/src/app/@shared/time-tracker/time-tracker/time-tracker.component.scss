@@ -1,0 +1,261 @@
+@import 'gauzy/_gauzy-overrides';
+:host {
+  position: fixed;
+  height: 0;
+  z-index: 999;
+  right: 20px;
+  top: 80px;
+  nb-card {
+    border: none;
+  }
+  .timer-card {
+    display: block;
+    padding: 20px;
+    width: 328px;
+    font-size: 14px;
+    position: relative;
+    box-shadow: 0px 6px 30px 0px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+  }
+  .background-basic-color-1 {
+    background-color: nb-theme(background-basic-color-1);
+  }
+  .background-basic-color-2 {
+    background-color: nb-theme(background-basic-color-2);
+  }
+  .header {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    width: 300px;
+    top: 0px;
+  }
+  .timer-container {
+    display: flex;
+    align-items: flex-start;
+
+    .time-tracker {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+    }
+    .is_billable {
+      button {
+        font-size: 12px;
+        padding: 5px 9px;
+      }
+    }
+    .actions {
+      display: flex;
+      align-items: center;
+      padding-left: 14px;
+    }
+    .time-count {
+      font-size: 22px;
+      width: 100%;
+      padding: 0 10px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      .today-time {
+        font-size: 0.6em;
+        line-height: 1;
+      }
+      .current-session {
+        font-weight: 400;
+      }
+    }
+    .toggle {
+      [nbButton].appearance-filled.size-medium {
+        padding: 8px 7px 10px 7px;
+      }
+      [nbButton].appearance-filled.status-danger {
+        padding: 8px;
+      }
+      fa-icon {
+        border: 1px dashed transparent !important;
+        margin: 0;
+        border-radius: 50px;
+        padding: 0px 3px 0px 4px;
+      }
+    }
+    .mode {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 10px;
+      &.expanded {
+        margin-top: 3.4rem;
+      }
+      button {
+        margin: 4px;
+        padding: 4px 2px 4px 2px;
+        svg {
+          border-radius: 2rem;
+          width: 12px;
+          margin: 0;
+        }
+        &.status-primary {
+          nb-icon {
+            color: #fff;
+          }
+        }
+        nb-icon {
+          height: 16px;
+          width: 16px;
+        }
+      }
+    }
+
+    [nbButton].appearance-filled.status-primary[disabled] {
+      background-color: nb-theme(text-primary-active-color);
+      border-color: nb-theme(text-primary-active-color);
+      color: #ffffff;
+      opacity: 0.4;
+    }
+    .timer,
+    .time-manual {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    h6 {
+      color: nb-theme(text-primary-color);
+      margin-bottom: 2rem;
+    }
+  }
+  ::ng-deep {
+    ng-select {
+      .ng-select-container {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.custom {
+  textarea {
+    background: rgba(126, 126, 143, 0.05);
+    color: nb-theme(text-basic-color);
+    border-color: nb-theme(background-basic-color-3);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px 0px inset;
+    resize: none;
+    width: 282.79px;
+    height: 84px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    &:hover {
+      border-color: nb-theme(color-primary-hover);
+      color: nb-theme(text-basic-color);
+      &:focus {
+        background: rgba(126, 126, 143, 0.05);
+      }
+    }
+    &:active {
+      background-color: nb-theme(background-basic-color-1);
+    }
+  }
+}
+
+.primary {
+  color: nb-theme(text-primary-color);
+}
+
+.custom-range-picker::ng-deep .range {
+  width: 128.5%;
+}
+
+.view-log-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+::ng-deep .ng-select .ng-select-container {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px 0px inset;
+  border-radius: var(--border-radius);
+  min-height: 42px;
+}
+
+::ng-deep .ng-select.ng-select-single .ng-select-container {
+  height: 42px;
+}
+
+.button {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  &.timesheet {
+    background-color: transparent;
+    font-weight: normal;
+    height: 36px;
+    padding: 9px 20px 18px 20px;
+    margin: 0;
+    width: 150px;
+  }
+  &.disabled {
+    height: 36px;
+    width: 120px;
+  }
+  &.success {
+    box-shadow: 0px 10px 13px -7px #25b869;
+    &.start,
+    &.add {
+      height: 36px;
+      font-size: 14px;
+      height: 36px;
+      padding: 9px 20px 18px 20px;
+      width: 120px;
+    }
+  }
+  &.switch {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.button,
+h6 {
+  display: inline-block;
+  text-transform: lowercase;
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+
+:host {
+  @include dialog(var(--gauzy-card-1), var(--gauzy-sidebar-background-4));
+}
+
+nb-card-footer{
+  position: absolute;
+  width: calc(100% + 48px);
+  left: -24px;
+  bottom: -128px;
+  
+    .alert {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 0.25rem;
+      font-size: 12px;
+      border-radius: var(--border-radius);
+  
+      nb-icon {
+        width: 30px;
+        height: 18px;
+      }
+
+      div {
+        line-height: 1.5em;
+      }
+  
+      ::ng-deep {
+        .close {
+          padding: 4px 8px;
+          font-size: 1rem;
+        }
+      }
+    }
+}

@@ -1,0 +1,49 @@
+@import 'gauzy/_gauzy-overrides';
+@import 'gauzy/_gauzy-cards';
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons {
+  width: 45rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+::ng-deep .buttons {
+  @include nb-select-overrides(
+    2rem,
+    $default-button-radius,
+    $default-box-shadow
+  );
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+:host {
+  nb-card,
+  nb-card-body {
+    background-color: var(--gauzy-card-2);
+  }
+  nb-card-body {
+    @include nb-ltr(padding, 0.75rem 0.5rem 0.75rem 0.75rem !important);
+    @include nb-rtl(padding, 0.75rem 0.75rem 0.75rem 0.5rem !important);
+  }
+  .custom-calendar {
+    overflow-y: auto;
+    height: calc(100vh - 21.75rem);
+  }
+  @include card_overrides(unset, $default-card-height, $default-radius);
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0em;
+}

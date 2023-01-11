@@ -1,0 +1,5 @@
+@import "report";
+
+:host ::ng-deep  nb-accordion .item-body {
+	padding-bottom: 0 !important;
+}

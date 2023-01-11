@@ -1,0 +1,37 @@
+@import 'themes';
+
+$radius: nb-theme(border-radius);
+
+.employee-optional-info {
+  	margin-top: 20px;
+}
+
+.organization-container {
+  background-color: rgba(126, 126, 143, 0.1);
+}
+
+.organization-photo img {
+  width: 100px;
+  height: 100px;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+  object-fit: cover;
+  border-radius: $radius;
+}
+
+.content {
+  background-color: var(--gauzy-card-2);
+  padding: 20px;
+  border-radius: 0 $radius $radius $radius;
+}
+
+:host {
+  padding: 0;
+  overflow-y: auto;
+  max-height: calc(100vh - 20.5rem);
+  border-radius: 0 $radius $radius $radius;
+
+  ::ng-deep .employee-form{
+    @include nb-ltr(padding-left, 1rem);
+    @include nb-rtl(padding-right, 1rem);
+  }
+}

@@ -1,0 +1,29 @@
+@import 'themes';
+
+:host .point{
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    @include nb-ltr(margin-right, 3px);
+    @include nb-rtl(margin-left, 3px);
+
+    &.basic {
+        background-color: var(--progress-bar-danger-background-color) !important;
+    }
+}
+
+.counter{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10px;
+    justify-content: space-between;
+}
+
+::ng-deep {
+    nb-progress-bar{
+        .progress-container {
+            height: 10px !important;
+        }
+    }
+}

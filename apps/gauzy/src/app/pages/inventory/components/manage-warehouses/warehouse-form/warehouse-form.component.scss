@@ -1,0 +1,24 @@
+@import '../../manage-merchants/merchant-form/merchant-form.component.scss';
+
+
+:host {
+	nb-stepper ::ng-deep .step-content {
+		height: calc(100vh - 17.25rem);
+	}
+
+	.next-button-container {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.step-container {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		gap: 1rem;
+
+		.step-form {
+			flex-grow: 10;
+		}
+	}
+}

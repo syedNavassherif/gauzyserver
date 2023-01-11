@@ -1,0 +1,34 @@
+@import 'gauzy/_gauzy-dialogs';
+.main {
+  .body {
+    width: 605px;
+  }
+
+  .close {
+    cursor: pointer;
+  }
+
+  .notes {
+    min-height: 5.5rem;
+    resize: none;
+  }
+
+  nb-card-header .employees {
+    margin-left: 20px;
+    padding-left: 20px;
+    border-left: 1px solid #edf1f7;
+
+    width: 220px;
+  }
+
+  .employees {
+    margin-bottom: 15px;
+  }
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .info-font {
+    font-size: 2em;
+  }
+}

@@ -1,0 +1,47 @@
+@import './themes';
+
+.image-item {
+  height: 100px;
+  width: 100%;
+  padding-bottom: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: nb-theme(border-radius);
+}
+
+.image-asset-list-item {
+  border-radius: nb-theme(border-radius);
+  transition: 0.1s all ease-in-out;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    box-shadow: var(--gauzy-shadow);
+
+    .delete-asset-btn {
+      opacity: 1;
+    }
+  }
+
+  &.selected {
+    box-shadow: var(--gauzy-shadow);
+  }
+}
+
+.delete-asset-btn {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 4px;
+  left: 4px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  box-shadow: var(--gauzy-shadow);
+  color: nb-theme(text-danger-color);
+}

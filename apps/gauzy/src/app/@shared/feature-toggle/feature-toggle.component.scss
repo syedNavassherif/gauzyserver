@@ -1,0 +1,77 @@
+@import 'themes';
+
+:host {
+    header {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 30px;
+        letter-spacing: 0em;
+    }
+
+    nb-card {
+        background-color: nb-theme(gauzy-card-2);
+    }
+
+    nb-card.card-feature {
+        height: calc(100vh - 16.5rem);
+        border-radius: 0 0 nb-theme(border-radius) nb-theme(border-radius);
+        padding: 0;
+        margin: 0;
+    }
+
+    nb-card-body.features {
+        overflow: auto;
+
+        nb-card {
+            background-color: unset;
+
+            nb-card-body {
+                border-radius: 0 0 nb-theme(border-radius) nb-theme(border-radius);
+                color: nb-theme(gauzy-text-color-2);
+
+                nb-list-item {
+                    nb-checkbox ::ng-deep {
+                        span.checked+span.text {
+                            color: nb-theme(text-primary-color);
+                        }
+                    }
+
+                    nb-checkbox ::ng-deep {
+                        span+span.text {
+                            color: nb-theme(gauzy-text-color-2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.mansory-layout {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+}
+.shortcut-card {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .mansory-layout {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+  }
+}
+@media only screen and (min-width: 1680px) {
+  .mansory-layout {
+    width: calc(100% - 5rem);
+  }
+}

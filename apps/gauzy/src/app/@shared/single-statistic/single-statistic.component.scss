@@ -1,0 +1,31 @@
+@import 'themes';
+
+@include nb-install-component() {
+	.statistic-component {
+		display: inline-flex;
+		flex-direction: column;
+	}
+
+	.title {
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 16px;
+		letter-spacing: -0.009em;
+		color: nb-theme(gauzy-text-color-2);
+		margin-bottom: 20px;
+	}
+
+	.content {
+		font-size: 36px;
+		font-weight: 400;
+		line-height: 44px;
+		letter-spacing: 0em;
+		color: nb-theme(gauzy-text-color-1);
+		margin-bottom: 20px;
+	}
+
+	.block-amount {
+		color: var(--color-success-default);
+		font-weight: 600;
+	}
+}

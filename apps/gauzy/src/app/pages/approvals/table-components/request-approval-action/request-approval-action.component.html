@@ -1,0 +1,20 @@
+<button
+	nbButton
+	status="success"
+	(click)="approval()"
+	*ngIf="isApproval"
+	size="small"
+  class="req-green"
+>
+	{{ 'APPROVAL_REQUEST_PAGE.APPROVE' | translate }}
+</button>
+<button
+	nbButton
+	status="danger"
+	(click)="refuse()"
+	*ngIf="isRefuse"
+	size="small"
+	class="req-red"
+>
+	{{ 'APPROVAL_REQUEST_PAGE.REFUSE' | translate }}
+</button>

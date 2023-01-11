@@ -1,0 +1,68 @@
+@import 'gauzy/_gauzy-table.scss';
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.gauzy-button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 0;
+  .custom-success {
+    height: 2rem;
+  }
+}
+
+:host {
+  nb-card,
+  nb-card-body {
+    background-color: var(--gauzy-card-2);
+  }
+  nb-card-body {
+    overflow: unset;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    @include nb-ltr(padding, 1rem 0.5rem 1rem 18px);
+    @include nb-rtl(padding, 1rem 18px 1rem 0.5rem);
+    height: 100%;
+    .goals-container {
+      height: calc(100vh - 20.5rem);
+      overflow: auto;
+      @include nb-ltr(padding, 0 0.5rem 0 0);
+      @include nb-rtl(padding, 0 0 0 0.5rem);
+    }
+  }
+  ::ng-deep {
+    nb-progress-bar {
+      width: 100%;
+      .progress-container {
+        height: 10px !important;
+      }
+      .progress-value {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+  nb-accordion-item-header ::ng-deep nb-icon {
+    border: 1px solid nb-theme(border-basic-color-4);
+    border-radius: nb-theme(border-radius);
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  nb-accordion {
+    box-shadow: unset;
+  }
+}
+nb-accordion-item-body {
+  &:hover,
+  &.item.selected {
+    background: var(--gauzy-card-2);
+  }
+}
+.keyResult {
+  cursor: pointer;
+}

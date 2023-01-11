@@ -1,0 +1,193 @@
+@import 'gauzy/_gauzy-overrides';
+
+.integrations-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/**
+* By setting min-height of the card to this value, we ensure the card will properly adjust it's height
+*/
+:host>nb-card {
+  min-height: 47.5rem;
+}
+
+.integration-filters {
+  display: flex;
+  margin-bottom: 37px;
+  box-shadow: 0 1px 0 0 var(--gauzy-border-default-color);
+  padding-bottom: 38px;
+}
+
+.group-select {
+  flex: 1 1 30%;
+  margin-right: 20px;
+}
+
+:host {
+  ::ng-deep {
+    #integrationSearch {
+      flex: 1 1 70%;
+      @include nb-ltr(margin-right, 20px);
+      @include nb-rtl(margin-right, 0px);
+    }
+  }
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.container {
+  padding: 0;
+}
+
+.grid-container {
+  display: flex;
+
+  .list-item {
+    height: 110px;
+    width: 7.5rem;
+    display: flex;
+    padding: 15px;
+    margin: 0 1rem 1rem 0;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 15%);
+    border-radius: 8px;
+    position: relative;
+    background-color: var(--gauzy-card-1);
+
+    &:hover {
+      box-shadow: 0px 1px 1px 1px var(--text-primary-color);
+      transition: 0.2 all;
+    }
+  }
+}
+
+
+img {
+  width: 100%;
+}
+
+.comingSoon-wrapper {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.comingSoon {
+  position: absolute;
+  width: 130px;
+  transform: rotate(45deg);
+  top: 25px;
+  right: -27px;
+  background: linear-gradient(var(--text-primary-color), rgb(101, 105, 223) 100%);
+  box-shadow: #000 0px 3px 10px -5px;
+  line-height: 25px;
+  color: rgb(255, 255, 255);
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 100%;
+    border-left: 3px solid rgb(103, 63, 189);
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid rgb(103, 63, 189);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0px;
+    top: 100%;
+    border-left: 3px solid transparent;
+    border-right: 3px solid rgb(103, 63, 189);
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid rgb(103, 63, 189);
+  }
+}
+
+:host {
+
+  nb-card,
+  nb-card-body {
+    background-color: var(--gauzy-card-2);
+  }
+
+  ::ng-deep {
+    nb-select {
+      &.integration-selector{
+          min-width: 10rem;
+      }
+      span {
+        color: var(--gauzy-text-color-2);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+    }
+
+    @include nb-select-overrides(2rem,
+      $default-button-radius,
+      $default-box-shadow );
+  }
+
+  h4 {
+    color: var(--gauzy-text-color-1);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    @include nb-ltr(text-align, left);
+    @include nb-rtl(text-align, right);
+  }
+}
+
+.selectors {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+label {
+  color: var(--gauzy-text-color-2);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 13px;
+  letter-spacing: -0.01em;
+  text-align: left;
+
+}
+
+nb-option {
+  color: var(--gauzy-text-color-1);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.clear-filter {
+  background-color: var(--gauzy-card-2);
+  padding: 8px;
+  border-radius: var(--button-rectangle-border-radius);
+  width: fit-content;
+
+  button {
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 15%);
+  }
+}

@@ -1,0 +1,13 @@
+@import '../payments/payments.component.scss';
+
+[nbButton].sharing.appearance-filled.status-primary {
+  color: nb-theme(text-primary-color);
+  border: unset;
+  background-color: nb-theme(color-primary-transparent-default);
+}
+
+:host {
+  nb-card-body {
+    height: calc($card-height - 0.5rem) !important;
+  }
+}

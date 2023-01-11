@@ -1,0 +1,48 @@
+@import 'gauzy/_gauzy-overrides';
+@import '../../../payments/payments.component.scss';
+
+.custom-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .title h5 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+.time-range {
+  width: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  .col {
+    white-space: nowrap;
+    padding-right: 0;
+  }
+}
+
+:host {
+  nb-card {
+    background-color: var(--gauzy-card-2);
+    nb-card-body {
+      background-color: unset;
+      padding-bottom: 1rem !important;
+      height: calc(100vh - 16.75rem) !important;
+    }
+  }
+  .time-range ::ng-deep ga-timer-picker {
+    text-transform: lowercase;
+    @include ng-select-overrides(
+      2rem,
+      $default-button-radius,
+      $default-box-shadow
+    );
+  }
+}
+:host .custom-calendar {
+  height: 100%;
+  overflow-y: auto;
+}

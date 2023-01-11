@@ -1,0 +1,51 @@
+.d-bottom {
+  display: flex;
+  align-items: flex-end;
+}
+
+.add-variant {
+  background-color: var(--color-success-transparent-100);
+  padding: 6px;
+  border-radius: var(--button-rectangle-border-radius);
+  width: fit-content;
+
+  button {
+    &[nbButton].green.appearance-filled.status-success {
+      background-color: var(--gauzy-card-1);
+      color: var(--color-success-default);
+      border: unset;
+      box-shadow: var(--gauzy-shadow);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 11px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+  }
+}
+
+.btn-variant-icon {
+  background: transparent !important;
+  border-radius: var(--button-rectangle-border-radius);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.35s all ease-in-out;
+  margin-right: 5px;
+}
+
+.variant-stored-btn {
+  background: var(--color-success-default) !important;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  svg {
+    fill: white !important;
+  }
+}

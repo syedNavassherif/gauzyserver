@@ -1,0 +1,37 @@
+@import '../picture-name-tags/picture-name-tags.component.scss';
+
+.image-container {
+    width: 70px;
+    height: 63px;
+    display: flex;
+    justify-content: center;
+}
+
+.color {
+    position: static;
+    margin-top: 5px;
+    display: inline-block;
+    @include nb-rtl(margin-left, 5px);
+    @include nb-ltr(margin-right, 5px);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 13px;
+    letter-spacing: 0em;
+    padding: 3px 8px;
+}
+
+.tags {
+    display: flex;
+    width: 200px;
+    flex-wrap: wrap;
+}
+
+img {
+    height: 100%;
+    max-width: 70px;
+    border-radius: 50%;
+}
+
+.tags-right {
+    justify-content: flex-end;
+}

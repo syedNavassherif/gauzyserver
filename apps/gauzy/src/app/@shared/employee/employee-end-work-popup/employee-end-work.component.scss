@@ -1,0 +1,9 @@
+@import 'gauzy/_gauzy-dialogs';
+
+nb-card {
+	width: 375px;
+	nb-card-footer{
+		display: flex;
+		gap: 1rem;
+	}
+}

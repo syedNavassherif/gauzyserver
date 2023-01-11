@@ -1,0 +1,37 @@
+@import 'gauzy/_gauzy-dialogs';
+
+.main {
+  width: 645px;
+
+  nb-card-header {
+    display: flex;
+    justify-content: space-between;
+
+    nb-icon {
+      cursor: pointer;
+    }
+  }
+
+  .checkboxes > :first-child {
+    padding-right: 15px;
+  }
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.label {
+  margin-bottom: 0.5rem;
+}
+
+.download-btn {
+  height: 2rem;
+  font-weight: 400;
+}
+
+nb-card {
+  background-color: nb-theme(gauzy-card-1);
+}

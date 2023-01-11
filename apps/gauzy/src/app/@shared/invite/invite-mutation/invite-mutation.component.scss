@@ -1,0 +1,17 @@
+@import 'var';
+@import 'gauzy/_gauzy-dialogs';
+
+@include nb-install-component() {
+  nb-card {
+    nb-card-header {
+      nb-icon.close {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+nb-card {
+  width: 645px;
+  background-color: var(--gauzy-card-1);
+}

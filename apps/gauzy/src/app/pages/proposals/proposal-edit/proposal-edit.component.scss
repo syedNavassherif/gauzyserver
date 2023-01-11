@@ -1,0 +1,26 @@
+@import 'gauzy/_gauzy-cards';
+@import 'gauzy/_gauzy-overrides';
+
+.text-editors {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+:host {
+  @include nb-card-overrides(
+    overlay,
+    calc($default-card-height + 3.5rem),
+    $default-radius
+  );
+  nb-card,
+  nb-card-body,
+  nb-card-footer {
+    background-color: var(--gauzy-card-2);
+  }
+  @include input-appearance(42px, var(--gauzy-card-1));
+}
+h4 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0em;
+}

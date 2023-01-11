@@ -1,0 +1,221 @@
+$border-radius: calc(2 * var(--border-radius));
+
+.button-at-bottom {
+  bottom: 0;
+}
+
+.full-height {
+  height: 80% !important;
+  min-height: 600px !important;
+}
+
+.btn-save {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.btn-width {
+  width: 80px;
+  position: absolute;
+  bottom: 10px;
+  right: -500px;
+}
+
+.content-body {
+  margin-top: 40px;
+}
+
+.margin-content {
+  margin-top: 40px !important;
+}
+
+.margin-icon {
+  margin-top: 35px;
+  height: 56px;
+}
+
+.button-home {
+  font-size: 16px;
+  font-weight: 600;
+  height: 56px;
+  width: 130px;
+}
+
+.top-bottom-space {
+  padding: 1px !important;
+}
+
+::ng-deep
+  nb-layout
+  .layout
+  .layout-container
+  .content.center {
+  width: 960px;
+  flex: 0 100 960px !important;
+}
+
+.col-center {
+  margin: auto;
+}
+
+::ng-deep  nb-stepper .step-content {
+  padding: 0px !important;
+}
+
+.card-full-height {
+  min-height: 680px;
+}
+
+::ng-deep body {
+  overflow: hidden !important;
+}
+
+.card-item {
+  border-radius: $border-radius;
+  text-align: left;
+  box-shadow: var(--gauzy-shadow);
+}
+
+.icon-item {
+  font-size: 40px;
+  color: #3366ff;
+}
+
+.card-item-content {
+  padding: 40px 33px 40px 40px;
+}
+
+.card-item-icon {
+  background: #f2f6ff 0 0 no-repeat padding-box;
+  text-align: center;
+  padding-top: 40px;
+  border-radius: 0 $border-radius $border-radius 0;
+  position: relative;
+  left: -15px;
+}
+
+.card-item ::ng-deep nb-card-body {
+  padding: 0;
+  overflow: unset;
+}
+
+.card-item-label {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.btn-fixed {
+  position: fixed;
+}
+
+.pull-right {
+  right: 60px;
+}
+
+.button-next-prev {
+  position: fixed;
+  bottom: 24px;
+}
+
+.icon-medium {
+  font-size: 24px;
+}
+
+.card-small-item {
+  border-radius: $border-radius;
+  text-align: left;
+  box-shadow: var(--gauzy-shadow);
+}
+
+.icon-connectivity {
+  height: 55px;
+  position: relative;
+  top: 10px;
+}
+
+.integraion-label {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.margin-form {
+  padding: 5px;
+}
+
+.btn-next {
+  font-size: 16px;
+  font-weight: 600;
+  height: 56px;
+  width: 180px;
+}
+
+.margin-setting-content {
+  margin-top: 10px !important;
+}
+
+.note {
+  font-size: 10px;
+  line-height: 0px;
+}
+
+::ng-deep nb-stepper .header {
+  pointer-events: none !important;
+}
+
+.progress-setup {
+  position: absolute;
+  bottom: 45px;
+  width: 95%;
+}
+
+.progress-icon {
+  text-align: center;
+}
+
+.gear-small {
+  font-size: 28;
+}
+
+.gear-medium {
+  font-size: 35px;
+  position: relative;
+  top: -11px;
+  left: -11px;
+}
+
+.progress-message {
+  font-size: 10px;
+}
+
+.icon-spin {
+  animation: rotate 2s ease-in-out 0s infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pull-right-custom {
+  right: -40px;
+}
+
+.btn-check {
+  font-size: 16px;
+  font-weight: 600;
+  height: 56px;
+  width: 120px;
+}
+
+.main-card-body{
+  background-color: var(--gauzy-card-2);
+}
+
+h4 {
+  font-weight: 600;
+}

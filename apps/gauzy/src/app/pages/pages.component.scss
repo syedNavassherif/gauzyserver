@@ -1,0 +1,50 @@
+@import '../@theme/styles/themes';
+@import '~@nebular/theme/styles/globals';
+@import 'themes';
+
+@include nb-install-component() {
+	::ng-deep router-outlet + * {
+		display: block;
+		animation: fade 1s;
+
+		@keyframes fade {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+	}
+
+	::ng-deep {
+		ng2-smart-table {
+      nav{
+        width: 100%;
+      }
+      .ng2-smart-row {
+        &.selected {
+          background: rgba(99, 19, 19, 0.05);
+        }
+      }
+			ng2-smart-table-title{
+				a{
+				 color: nb-theme(smart-table-fg);
+				}
+			}
+		  .form-control {
+			background-color: nb-theme(input-basic-background-color);
+			border-color: nb-theme(input-basic-border-color);
+			border-style: nb-theme(input-border-style);
+			border-width: nb-theme(input-border-width);
+			color: nb-theme(input-basic-text-color);
+
+			&::placeholder {
+				color: nb-theme(input-basic-placeholder-text-color);
+				text-overflow: ellipsis;
+			  }
+		  }
+		}
+	  }
+}

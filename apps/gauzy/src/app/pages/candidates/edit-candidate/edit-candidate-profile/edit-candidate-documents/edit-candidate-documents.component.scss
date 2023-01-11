@@ -1,0 +1,88 @@
+@import 'gauzy/_gauzy-table';
+@import 'gauzy/_gauzy-dialogs';
+
+.documents-form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+input {
+  height: 36px;
+}
+.form-btn {
+  margin: 0.5rem 0;
+}
+.documents-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.documents-line {
+  margin: 0.2rem 0;
+}
+.documents-title {
+  font-weight: 600;
+}
+.documents-add-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.add-card-wrapp {
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.label {
+  margin: 0 0 8px;
+}
+
+.document-data {
+  font-size: 12px;
+  color: grey;
+}
+
+.doc-icon {
+  color: #3365ff !important;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-color: 1px solid black;
+}
+
+.documents-card-container {
+  background-color: rgba(126, 126, 143, 0.05);
+  border-radius: nb-theme(border-radius);
+  padding: 1rem;
+}
+
+.custom-form {
+  background-color: var(--gauzy-card-2);
+  border-radius: nb-theme(border-radius);
+  padding: 1rem;
+}
+
+:host {
+  overflow-y: auto;
+  max-height: calc(100vh - 27rem);
+  nb-card {
+    background-color: var(--gauzy-card-2);
+    &.document {
+      background-color: nb-theme(gauzy-card-1);
+      margin-bottom: 8px;
+    }
+  }
+  @include dialog(var(--gauzy-card-2), var(--gauzy-card-1));
+}

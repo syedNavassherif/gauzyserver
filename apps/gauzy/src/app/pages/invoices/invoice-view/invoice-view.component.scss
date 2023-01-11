@@ -1,0 +1,49 @@
+@import 'gauzy/_gauzy-cards';
+@import 'gauzy/_gauzy-table.scss';
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.3fr 0.3fr;
+  &-item {
+    margin: 15px;
+  }
+}
+
+.item {
+  margin: 15px;
+}
+
+.table {
+  margin-top: 50px;
+}
+
+/**
+* By setting min-height of the card to this value, we ensure the card will properly adjust it's height
+*/
+:host > nb-card {
+  min-height: 47.5rem;
+}
+
+.button-container{
+  background: var(--gauzy-card-2);
+  border-radius: nb-theme(button-rectangle-border-radius);
+  padding: 6px 8px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  .title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+:host {
+  $height: calc(
+    100vh - 18rem
+  );
+  @include nb-card_overrides(unset, $height, $default-radius);
+}

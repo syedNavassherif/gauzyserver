@@ -1,0 +1,48 @@
+@import 'themes';
+
+@include nb-install-component {
+  .item-invalid {
+    ::ng-deep .ng-select-container {
+      border: 1px solid red;
+      border-color: nb-theme(color-danger-default);
+    }
+  }
+
+  .item-valid {
+    ::ng-deep .ng-select-container {
+      border: 1px solid green;
+      border-color: nb-theme(color-success-default);
+    }
+  }
+
+  // Remove drop down arrow from email select
+  #emailsSelect {
+    ::ng-deep {
+      .ng-clear-wrapper {
+        width: 20px;
+      }
+      .ng-arrow-wrapper {
+        display: none;
+      }
+    }
+  }
+}
+
+.header {
+  display: flex;
+}
+:host {
+  nb-card,
+  nb-card-body,
+  nb-card-footer {
+    background-color: var(--gauzy-card-2);
+  }
+  ::ng-deep ngx-timer-range-picker {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .row {
+      width: 50%;
+    }
+  }
+}

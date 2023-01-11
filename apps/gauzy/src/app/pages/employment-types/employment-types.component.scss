@@ -1,0 +1,59 @@
+@import 'apps/gauzy/src/app/pages/expenses/expense-categories/expense-categories.component.scss';
+@import 'gauzy/_gauzy-dialogs';
+
+:host {
+    height: 100%;
+    nb-tab.content-active {
+      height: calc(100vh - 16.75rem);;
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+      overflow: unset;
+      display: flex;
+      flex-direction: column;
+      @include nb-ltr(padding, 1rem 0.5rem 1rem 18px);
+      @include nb-rtl(padding, 1rem 18px 1rem 0.5rem);
+      nb-accordion {
+        @include nb-ltr(margin-right, 0.625rem);
+        @include nb-rtl(margin-left, 0.625rem);
+      }
+    }
+    nb-tabset{
+      height: 100%;
+    }
+    nb-card,
+    nb-tab.content-active {
+      background-color: var(--gauzy-card-2);
+    }
+    nb-card-body{
+      overflow: unset;
+      background-color: unset;
+    }
+    .table-scroll-container{
+        max-height: unset;
+    }
+    .grid{
+        overflow: auto;
+        height: 100%;
+    }
+  }
+
+:host .gauzy-button-container {
+    position: absolute;
+    @include nb-ltr(right, 16px);
+    @include nb-rtl(left, 16px);
+    top: 0;
+}
+
+nb-accordion-item-header ::ng-deep nb-icon {
+    border: 1px solid nb-theme(border-basic-color-4);
+    border-radius: nb-theme(input-rectangle-border-radius);
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+nb-card-body {
+    background: none;
+}
+
+.no-data{
+    height: 100%;
+}

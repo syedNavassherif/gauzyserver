@@ -1,0 +1,51 @@
+<nb-card>
+	<nb-card-header>
+		<span class="cancel">
+			<i class="fas fa-times" (click)="cancel()"></i>
+		</span>
+		<h5 class="title">
+			{{ 'INVOICES_PAGE.PUBLIC_LINK.HEADER' | translate }}
+		</h5>
+	</nb-card-header>
+	<nb-card-body>
+		<div class="mb-3">
+			{{
+				'INVOICES_PAGE.PUBLIC_LINK.ACCESS' | translate : {
+					text: invoice.isEstimate ? 'estimate' : 'invoice'
+				}
+			}}
+		</div>
+		<div>
+			<label for="publicLink" class="label">
+				{{ 'FORM.LABELS.PUBLIC_LINK' | translate }}
+			</label>
+			<input
+				id="publicLink"
+				[ngModel]="publicLink"
+				readonly
+				nbInput
+				fullWidth
+				#inputTarget
+			/>
+		</div>
+	</nb-card-body>
+	<nb-card-footer class="text-left">
+		<button
+			outline
+			nbButton
+			status="basic"
+			class="mr-3"
+			(click)="cancel()"
+		>
+			{{ 'BUTTONS.CANCEL' | translate }}
+		</button>
+		<button
+			[ngxClipboard]="inputTarget"
+			class="mr-3"
+			status="success"
+			nbButton
+		>
+			{{ 'BUTTONS.COPY_LINK' | translate }}
+		</button>
+	</nb-card-footer>
+</nb-card>

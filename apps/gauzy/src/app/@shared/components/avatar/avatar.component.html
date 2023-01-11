@@ -1,0 +1,21 @@
+<div class="avatar-wrapper">
+	<div class="inner-wrapper">
+		<div class="image-outer-wrapper" *ngIf="src">
+			<div class="image-container {{ size }}" (click)="edit(id)">
+				<img class="rounded-circle" type="user" [src]="src" />
+			</div>
+		</div>
+		<div class="names-wrapper">
+			<ng-container *ngIf="name && !isOption">
+				<a class="link-text" *ngIf="name" (click)="edit(id)" [title]="name">{{ name }}</a>
+			</ng-container>
+			<div *ngIf="name && isOption">{{ name }}</div>
+			<div class="text-caption caption" *ngIf="caption">
+				<ng-template [ngIf]="appendCaption">
+					{{ appendCaption }}
+				</ng-template>
+				{{ caption }}
+			</div>
+		</div>
+	</div>
+</div>

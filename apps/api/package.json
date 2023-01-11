@@ -1,0 +1,57 @@
+{
+	"name": "@gauzy/api",
+	"version": "0.1.0",
+	"description": "Gauzy API",
+	"license": "AGPL-3.0",
+	"homepage": "https://gauzy.co",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ever-co/ever-gauzy.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ever-co/ever-gauzy/issues"
+	},
+	"private": true,
+	"author": {
+		"name": "Ever Co. LTD",
+		"email": "ever@ever.co",
+		"url": "https://ever.co"
+	},
+	"scripts": {
+		"typeorm": "yarn ts-node -r tsconfig-paths/register --project apps/api/tsconfig.app.json node_modules/.bin/typeorm",
+		"typeorm:sync": "yarn typeorm schema:sync",
+		"typeorm:seeds": "yarn typeorm migration:run",
+		"typeorm:flush": "yarn typeorm migration:revert",
+		"typeorm:create": "yarn typeorm migration:create",
+		"typeorm:preserve": "yarn typeorm:sync -- -f=ormconfig && yarn typeorm:seeds -- -f=ormconfig",
+		"migration:run": "yarn ts-node -r tsconfig-paths/register src/migration.ts migration:run",
+		"migration:revert": "yarn ts-node -r tsconfig-paths/register src/migration.ts migration:revert",
+		"migration:generate": "yarn ts-node -r tsconfig-paths/register src/migration.ts migration:generate",
+		"start": "yarn ts-node -r tsconfig-paths/register --project apps/api/tsconfig.app.json src/main.ts",
+		"start:debug": "nodemon --config nodemon-debug.json",
+		"build": "yarn ng build api",
+		"build:prod": "yarn ng build api --prod",
+		"seed": "cross-env NODE_ENV=development NODE_OPTIONS=--max_old_space_size=8192 yarn ts-node -r tsconfig-paths/register --project apps/api/tsconfig.app.json src/seed.ts",
+		"seed:build": "yarn ng run api:seed",
+		"seed:all": "cross-env NODE_ENV=development NODE_OPTIONS=--max_old_space_size=8192 yarn ts-node -r tsconfig-paths/register --project apps/api/tsconfig.app.json src/seed-all.ts",
+		"seed:module": "cross-env NODE_ENV=development NODE_OPTIONS=--max_old_space_size=8192 yarn ts-node -r tsconfig-paths/register --project apps/api/tsconfig.app.json src/seed-module.ts --name",
+		"seed:all:build": "yarn ng run api:seed-all",
+		"seed:prod": "cross-env NODE_ENV=production NODE_OPTIONS=--max_old_space_size=8192 yarn ts-node -r tsconfig-paths/register --project apps/api/tsconfig.app.json src/seed.ts",
+		"seed:prod:build": "yarn ng run api:seed -c=production"
+	},
+	"dependencies": {
+		"@gauzy/changelog": "^0.1.0",
+		"@gauzy/core": "^0.1.0",
+		"@gauzy/knowledge-base": "^0.1.0",
+		"dotenv": "^16.0.3",
+		"yargs": "^17.5.0"
+	},
+	"devDependencies": {
+		"@nestjs/schematics": "^9.0.3",
+		"@nestjs/testing": "^9.2.1",
+		"nodemon": "^2.0.7",
+		"pm2": "^4.5.1",
+		"ts-node": "^9.1.1",
+		"typescript": "4.5.5"
+	}
+}

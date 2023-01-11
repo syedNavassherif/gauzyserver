@@ -1,0 +1,38 @@
+.badge-danger {
+  background-color: #ff3d71;
+}
+
+.badge-success {
+  background-color: #00d68f;
+}
+
+.badge-primary {
+  background-color: #0095ff;
+}
+
+.badge-warning {
+  background-color: #fa0;
+  color: #fff;
+}
+
+div {
+  border-radius: 0.25rem;
+  align-content: center;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.badge {
+  text-align: center;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+}

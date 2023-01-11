@@ -1,0 +1,109 @@
+<nb-card [formGroup]="form">
+	<nb-card-header class="d-flex">
+		<h5>
+			Add Task
+		</h5>
+	</nb-card-header>
+	<nb-card-body class="body">
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label class="label">Projects</label>
+					<ng-select [addTag]="addProject" addTagText="Add project" [clearable]="true" placeholder="Project"
+						[items]="projects" bindLabel="name" formControlName="project">
+						<ng-template ng-option-tmp let-item="item" let-index="index">
+							<img *ngIf="item.imageUrl" [src]="item.imageUrl" width="20px" height="20px" />
+							<span>
+								{{ item?.name }}
+							</span>
+						</ng-template>
+						<ng-template ng-label-tmp let-item="item">
+							<div class="selector-template">
+								<img *ngIf="item.imageUrl" [src]="item.imageUrl" width="20px" height="20px" />
+								<span>
+									{{ item?.name }}
+								</span>
+							</div>
+						</ng-template>
+					</ng-select>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label class="label">Status</label>
+					<ng-select [clearable]="true" placeholder="Status" [items]="statuses" bindValue="id"
+						bindLabel="name" formControlName="status">
+					</ng-select>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label class="label">Title</label>
+					<input class="name-input" formControlName="title" type="text" nbInput placeholder="Title" />
+				</div>
+			</div>
+			<div class="col-sm-12">
+				<label class="label">
+					Tags
+				</label>
+				<div class="form-group">
+					<ng-select [clearable]="true" placeholder="Tags" formControlName="tags" [items]="tags" bindLabel="name"
+						[multiple]="true">
+						<ng-template ng-option-tmp let-tag="item" let-tag$="item$">
+							<div class="d-flex align-items-center">
+								<ng-container *ngIf="multiple">
+									<input type="checkbox" [ngModel]="tag$.selected" />
+								</ng-container>
+								<nb-badge [style.background]="background(tag.color)" class="tag-color"></nb-badge>
+								<span class="text">{{ tag.name }}</span>
+							</div>
+						</ng-template>
+					
+						<ng-template ng-label-tmp let-tag="item" let-clear="clear">
+							<nb-badge class="tag-color tag-label" [style.background]="background(tag.color)"
+								[style.color]="backgroundContrast(tag.color)" [text]="tag.name" (click)="clear(tag)"></nb-badge>
+						</ng-template>
+					</ng-select>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label for="dueDate" class="label">Due Date</label>
+					<input type="text" formControlName="dueDate" nbInput placeholder="Due Date"
+						[nbDatepicker]="taskDueDatePicker" id="dueDate" fullWidth />
+					<nb-datepicker #taskDueDatePicker></nb-datepicker>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<label for="estimate" class="label">Estimate</label>
+				<div class="estimate-inputs">
+					<input formControlName="estimateDays" type="number" [min]="0" nbInput placeholder="Days" />
+
+					<input formControlName="estimateHours" type="number" min="0" max="23" nbInput placeholder="Hours" />
+
+					<input formControlName="estimateMinutes" type="number" [min]="0" min="0" max="59" nbInput
+						placeholder="Minutes" />
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<label class="label">Description</label>
+				<textarea formControlName="description" nbInput fullWidth class="description"
+					placeholder="Description"></textarea>
+			</div>
+		</div>
+	</nb-card-body>
+	<nb-card-footer>
+		<button status="danger" class=" cancel mr-3" outline nbButton (click)="close()">
+			Cancel
+		</button>
+		<button [disabled]="form?.invalid" status="success" nbButton (click)="save()">
+			Save
+		</button>
+	</nb-card-footer>
+</nb-card>

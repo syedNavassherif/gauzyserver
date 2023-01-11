@@ -1,0 +1,67 @@
+<nb-card class="main">
+	<nb-card-header class="header">
+		<ngx-back-navigation></ngx-back-navigation>
+		<h3 class="title" *ngIf="!isEstimate">
+			{{ 'INVOICES_PAGE.VIEW_INVOICE' | translate }}
+		</h3>
+		<h3 class="title" *ngIf="isEstimate">
+			{{ 'INVOICES_PAGE.VIEW_ESTIMATE' | translate }}
+		</h3>
+	</nb-card-header>
+	<nb-card-body>
+		<ga-invoice-view-inner
+			id="contentToConvert"
+			*ngIf="invoice"
+			[invoice]="invoice"
+			[isEstimate]="isEstimate"
+			[buttonsOutlet]="buttons"
+		>
+		</ga-invoice-view-inner>
+	</nb-card-body>
+</nb-card>
+<ng-template #buttons>
+	<div class="button-container">
+		<button
+			nbButton
+			status="basic"
+			class="action secondary"
+			[disabled]="disableButton"
+			size="small"
+		>
+			<nb-icon icon="printer-outline" pack="eva"></nb-icon>
+			{{ 'BUTTONS.PRINT' | translate }}
+		</button>
+		<button
+			nbButton
+			status="basic"
+			size="small"
+			class="action primary"
+			(click)="download()"
+		>
+			<nb-icon icon="download-outline"></nb-icon>
+			{{ 'BUTTONS.DOWNLOAD' | translate }}
+		</button>
+		<button
+			nbButton
+			status="basic"
+			class="action primary"
+			[disabled]="!selectedItem && disableButton"
+			size="small"
+			(click)="edit()"
+		>
+			<nb-icon icon="edit-outline"></nb-icon>
+			{{ 'BUTTONS.EDIT' | translate }}
+		</button>
+		<button
+			nbButton
+			status="basic"
+			class="action"
+			[disabled]="disableButton"
+			size="small"
+			[nbTooltip]="'BUTTONS.DELETE' | translate"
+			(click)="delete()"
+		>
+			<nb-icon status="danger" icon="trash-2-outline"> </nb-icon>
+		</button>
+	</div>
+</ng-template>

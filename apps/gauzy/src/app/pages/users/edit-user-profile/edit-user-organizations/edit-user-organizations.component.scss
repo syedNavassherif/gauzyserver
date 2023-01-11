@@ -1,0 +1,30 @@
+@import 'themes';
+
+:host {
+    nb-card {
+        background-color: nb-theme(gauzy-card-2);
+
+        &.organization {
+            background-color: nb-theme(gauzy-card-3);
+            margin: 0 0 0.5rem 0;
+
+            .organization-image {
+                @include nb-ltr(margin-right, 10px);
+                @include nb-rtl(margin-left, 10px);
+            }
+        }
+    }
+    nb-actions{
+        @include nb-rtl(float, left !important);
+    }
+}
+
+.edit-user-organizations {
+    width: 50%;
+}
+
+@media only screen and (max-width: 1200px) {
+    .edit-user-organizations {
+        width: 100%;
+    }
+}

@@ -1,0 +1,9 @@
+@import 'themes';
+
+:host {
+    ngx-profile ::ng-deep {
+        nb-card {
+            border-radius: 0 nb-theme(border-radius) nb-theme(border-radius) nb-theme(border-radius);
+        }
+    }
+}

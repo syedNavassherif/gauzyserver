@@ -1,0 +1,20 @@
+.layout-switch {
+  display: flex;
+
+  .switch-button {
+    margin: 0px;
+    border: none;
+    border-width: 0px !important;
+  }
+}
+
+[nbButton].primary.size-small.icon-start.icon-end.appearance-filled {
+  box-shadow:  var(--gauzy-shadow) inset;
+  background: rgba(126, 126, 143, 1);
+  color: white;
+}
+
+[nbButton].basic.size-small.icon-start.icon-end.appearance-filled{
+  box-shadow:  var(--gauzy-shadow);
+  background: rgba(255, 255, 255, 1);
+}

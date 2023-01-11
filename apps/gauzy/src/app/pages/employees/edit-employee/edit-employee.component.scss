@@ -1,0 +1,111 @@
+@import 'gauzy/_gauzy-cards';
+@import 'gauzy/_gauzy-overrides';
+
+.edit-icon {
+  margin-left: 30px;
+  position: relative;
+  width: 36px;
+
+  svg {
+    position: absolute;
+  }
+
+  nb-icon {
+    position: absolute;
+  }
+}
+
+.employee-image img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+}
+
+.edit-icon {
+  margin-left: 30px;
+  position: relative;
+  width: 36px;
+
+  svg {
+    position: absolute;
+  }
+
+  nb-icon {
+    position: absolute;
+  }
+}
+
+.edit-public-page {
+  .edit-public-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 12px;
+    box-sizing: border-box;
+    border-radius: nb-theme(button-rectangle-border-radius);
+    border: 2px solid nb-theme(color-primary-transparent-default);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 11px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: nb-theme(text-primary-color);
+    cursor: pointer;
+  }
+}
+
+.setting-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.body-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.mutation-card.setting-block {
+  background: #eaf3fc;
+}
+
+.transparent {
+  opacity: 0.7;
+}
+
+.settings-body {
+  padding: 35px;
+}
+
+.sub-header {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.header-content {
+  display: flex;
+
+  .header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 560px;
+    padding-left: 30px;
+  }
+}
+
+.icon-verified {
+  margin-right: 5px;
+}
+
+:host {
+  @include nb-card_overrides(
+    unset,
+    calc($default-card-height + 3.5rem),
+    $default-radius
+  );
+  @include input-appearance(42px, var(--gauzy-card-1));
+}

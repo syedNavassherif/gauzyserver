@@ -1,0 +1,14 @@
+<ng-container *ngIf="!isLoading; else loadingTemplate">
+	<div class="logo">
+		<ngx-gauzy-logo [isAccordion]="false"></ngx-gauzy-logo>
+		{{ 'ONBOARDING.FIRST_ORGANIZATION' | translate }}
+	</div>
+	<ga-organizations-step-form
+		[isOnboarding]="true"
+		(createOrganization)="onboardUser($event)"
+		class="step-form"
+	></ga-organizations-step-form>
+</ng-container>
+<ng-template #loadingTemplate>
+	<nb-spinner></nb-spinner>
+</ng-template>

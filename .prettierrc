@@ -1,0 +1,23 @@
+{
+	"singleQuote": true,
+	"semi": true,
+	"useTabs": true,
+	"tabWidth": 4,
+	"arrowParens": "always",
+	"trailingComma": "none",
+	"overrides": [
+		{
+			"files": "*.scss",
+			"options": {
+				"useTabs": false,
+				"tabWidth": 2
+			}
+		},
+		{
+			"files": "*.yml",
+			"options": {
+				"useTabs": false
+			}
+		}
+	]
+}

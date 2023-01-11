@@ -1,0 +1,8 @@
+{
+	"language": "ts",
+	"collection": "@nestjs/schematics",
+	"sourceRoot": "apps/api/src",
+	"compilerOptions": {
+		"assets": ["apps/api/src/assets/i18n/**/*"]
+	}
+}

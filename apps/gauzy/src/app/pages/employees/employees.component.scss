@@ -1,0 +1,39 @@
+@import 'gauzy/_gauzy-overrides';
+@import '../payments/payments.component.scss';
+
+nb-card {
+  background-color: var(--gauzy-card-2);
+  nb-card-body {
+    height: calc(100vh - 17.75rem) !important;
+  }
+}
+.btn-group.actions {
+  padding: 0;
+}
+.gauzy-button-container {
+  display: flex;
+  align-items: center;
+}
+:host {
+  .custom-toggle {
+    margin: 0 28px 0 12px;
+    padding-top: 5px;
+    ::ng-deep {
+      nb-toggle.status-danger .toggle.checked {
+        background-color: rgba(245, 109, 88, 1);
+        border-color: rgba(245, 109, 88, 1);
+      }
+      nb-toggle.status-danger .text {
+        color: rgba(245, 109, 88, 1);
+      }
+      nb-toggle.status-danger .toggle {
+        background-color: nb-theme(color-primary-transparent-default);
+        border-color: nb-theme(color-primary-transparent-default);
+      }
+    }
+  }
+  .grid {
+    height: 100%;
+    overflow: auto;
+  }
+}
